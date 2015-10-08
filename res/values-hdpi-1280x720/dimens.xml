@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  
+    
+        <!--everyday每日鲜  -->
+       
+    <dimen name="topImage_height">200dp</dimen>
+    <dimen name="topImage_width">118dp</dimen>
+    <dimen name="botImage_height">177dp</dimen>
+    <dimen name="botImage_width">100dp</dimen>
+    <dimen name="topText_width">68dp</dimen>
+    <dimen name="botText_width">68dp</dimen>
+    
+            <!--动画  -->
+       
+    <dimen name="view_height">350dp</dimen>
+    <dimen name="view_width">250dp</dimen>
+    
+         <!--分类  -->
+       
+    <dimen name="more_height">186dp</dimen>
+    <dimen name="more_width">105dp</dimen>
+ 
+             <!--轮播头图片分类  -->
+       
+    <dimen name="type_height">100dp</dimen>
+ 
+ 
+       
+       
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.panfeng.shinning"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e0000000" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="    点击这里\n设置来电视频"
+        android:layout_centerInParent="true"
+        android:textColor="@color/color_white"
+        android:layout_marginTop="10dp"
+        android:paddingBottom="100dp"
+        android:textSize="24sp" />
+    
+    
+    <ImageView
+        android:id="@+id/closefirstview"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/close_btn" />
+
+    <ImageView
+        android:id="@+id/firstset"
+        android:layout_width="75dp"
+        android:layout_height="240dp"
+        android:paddingTop="60dp"
+        android:paddingBottom="60dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_above="@+id/firstvideo_set"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="10dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/first" />
+
+
+    <ImageView
+        android:id="@+id/firstvideo_set"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="50dp"
+        android:src="@drawable/s2nd_shinning_setting_1_btn" />
+
+                                                                                                           
+
+</RelativeLayout>

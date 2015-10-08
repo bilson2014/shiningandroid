@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.panfeng.shinning"
+    android:layout_width="wrap_content"
+    android:layout_height="45dp" >
+
+    <com.panfeng.shining.widgets.TileButton
+        android:id="@+id/s1"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/share_item_margin"
+        android:background="@drawable/key_background"
+        
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:text="标签"
+        android:textColor="#a6a6a6" />
+
+</FrameLayout>

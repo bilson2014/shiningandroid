@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_neg_1">-50.0dip</dimen>
+    <dimen name="margin_pos_1">50.0dip</dimen>
+    <dimen name="margin_2">75.0dip</dimen>
+    <dimen name="margin_3">80.0dip</dimen>
+    <dimen name="margin_1">15.0dip</dimen>
+    <dimen name="margin_very_small">5.0dip</dimen>
+    <dimen name="margin_back_btn">5.0dip</dimen>
+    <dimen name="btn_height">45.0dip</dimen>
+    <dimen name="div_line_height">2.0dip</dimen>
+    <dimen name="text_size_1">20sp</dimen>
+    <dimen name="btn_width_1">86dp</dimen>
+    <dimen name="btn_title_width">65dp</dimen>
+    <dimen name="btn_title_height">36dip</dimen>
+    <dimen name="btn_normal_title_width">80dp</dimen>
+    <dimen name="btn_normal_title_height">36dip</dimen>
+      <dimen name="tag">30dp</dimen>
+
+    <!-- 所要用到的软件图标的三种大小 -->
+    <dimen name="soft_icon_big">35dip</dimen>
+    <!-- 大 -->
+    <dimen name="soft_icon_bg_big">52.5dip</dimen>
+    <!-- 大 -->
+    <dimen name="soft_icon_mid">33dip</dimen>
+    <!-- 中 -->
+    <dimen name="soft_icon_small">22dip</dimen>
+    <!-- 小 -->
+
+
+    <!-- 文本大小 命名规范为 ur_text_size+_字号 -->
+    <!-- ur_text_size_4 为四号字 -->
+    <!-- ur_text_size_11_5 为11.5号字 -->
+    <dimen name="ur_text_size_4">12dip</dimen>
+    <dimen name="ur_text_size_4_5">13dip</dimen>
+    <dimen name="ur_text_size_5">14dip</dimen>
+    <dimen name="ur_text_size_5.5">16dip</dimen>
+    <dimen name="ur_text_size_6">18dip</dimen>
+    <dimen name="ur_text_size_7">20dip</dimen>
+    <dimen name="ur_text_size_8">22.5dip</dimen>
+    <dimen name="ur_text_size_10">26dip</dimen>
+    <dimen name="ur_text_size_11">30dip</dimen>
+    <dimen name="ur_text_size_11_5">32.5dip</dimen>
+    <dimen name="ur_text_size_14">33dip</dimen>
+
+    <!-- margin的尺寸，命名规则：ur_view_margin_+尺寸 -->
+    <!-- ur_view_margin_12_5 为12.5dip -->
+    <dimen name="ur_view_margin_1">1dip</dimen>
+    <dimen name="ur_view_margin_2">2dip</dimen>
+    <dimen name="ur_view_margin_3">3dip</dimen>
+    <dimen name="ur_view_margin_4">4dip</dimen>
+    <dimen name="ur_view_margin_5">5dip</dimen>
+    <dimen name="ur_view_margin_7">7dp</dimen>
+    <dimen name="ur_view_margin_8">8dp</dimen>
+    <dimen name="ur_view_margin_10">10dip</dimen>
+    <dimen name="ur_view_margin_12">12dip</dimen>
+    <dimen name="ur_view_margin_15">15dip</dimen>
+    <dimen name="ur_view_margin_18">18dip</dimen>
+    <dimen name="ur_view_margin_20">20dip</dimen>
+    <dimen name="ur_view_margin_25">25dip</dimen>
+    <dimen name="ur_view_margin_30">30dip</dimen>
+    <dimen name="ur_view_margin_32">32dip</dimen>
+    <dimen name="ur_view_margin_200">200dip</dimen>
+    <dimen name="ur_view_margin_300">300dip</dimen>
+    <dimen name="ur_view_margin__70">-70dip</dimen>
+
+    <!-- padding 尺寸  原理同上 -->
+    <dimen name="ur_view_padding_1">1dip</dimen>
+    <dimen name="ur_view_padding_2">2dip</dimen>
+    <dimen name="ur_view_padding_4">4dip</dimen>
+    <dimen name="ur_view_padding_6">6dip</dimen>
+    <dimen name="ur_view_padding_8">8dip</dimen>
+    <dimen name="ur_view_padding_10">10dip</dimen>
+    <dimen name="ur_view_padding_12">12dip</dimen>
+    <dimen name="ur_view_padding_14">14dip</dimen>
+    <dimen name="ur_view_padding_18">18dip</dimen>
+    <dimen name="ur_view_padding_22">22dip</dimen>
+    <dimen name="ur_view_padding_24">24dip</dimen>
+
+    <!-- Item中分隔条的高度 -->
+    <dimen name="item_divide_height">1px</dimen>
+    <dimen name="item_divide_height_2">2px</dimen>
+    <dimen name="item_divide_height_3">3px</dimen>
+    <dimen name="item_divide_height_4">4px</dimen>
+    <dimen name="calendar_day_headers_paddingbottom">4dp</dimen>
+    <dimen name="calendar_month_topmargin">16dp</dimen>
+    <dimen name="calendar_month_title_bottommargin">4dp</dimen>
+    <dimen name="calendar_text_medium">18sp</dimen>
+    <dimen name="calendar_text_small">14sp</dimen>
+    <dimen name="popupwindow_divider_width">60dp</dimen>
+    <dimen name="popupwindow_item_height">42dp</dimen>
+    <dimen name="button_normal_height">38dip</dimen>
+    <dimen name="button_normal_width">95dip</dimen>
+    <dimen name="title_height">45dip</dimen>
+    <dimen name="pv_title_height">40dip</dimen>
+    <dimen name="tab_height">50dip</dimen>
+    <dimen name="author_value_text_size">12sp</dimen>
+    <dimen name="pmz_small_txt">15sp</dimen>
+    <dimen name="metro_margin">5dp</dimen>
+    <dimen name="metro_layout_margin_verti">15dp</dimen>
+    <dimen name="metro_layout_margin_hori">15dp</dimen>
+    <dimen name="metro_padding">5dp</dimen>
+    <dimen name="metro_item_txt_size">18sp</dimen>
+    <dimen name="cmz_btn_margin">3dp</dimen>
+    <dimen name="app_tab_divider_width">1dp</dimen>
+    <dimen name="app_tab_icon_height">25dp</dimen>
+    <dimen name="app_title_icon_size">40dp</dimen>
+    <dimen name="van_icon_size">30dp</dimen>
+    <dimen name="dot_icon_size">25dp</dimen>
+    <dimen name="share_bar_height">60dip</dimen>
+    <dimen name="share_item_width">40dip</dimen>
+    <dimen name="share_item_margin">5dip</dimen>
+    <dimen name="s2nd_text_size_small">14sp</dimen>
+    <dimen name="s2nd_text_size_normal">16sp</dimen>
+    <dimen name="s2nd_text_size_big">20sp</dimen>
+    <dimen name="s2nd_text_size_title">24sp</dimen>
+    <dimen name="s2nd_margin_small">0dip</dimen>
+    <dimen name="s2nd_margin_normal">10dip</dimen>
+    <dimen name="s2nd_margin_big">20dip</dimen>
+    
+     <dimen name="s2nd_wordsize_big">16sp</dimen>
+     <dimen name="s2nd_wordsize_mid">14sp</dimen>
+     <dimen name="s2nd_wordsize_small">12sp</dimen>
+     <dimen name="s2nd_margin_small_v2">5dip</dimen>
+     <dimen name="s2nd_margin_small_v3">8dip</dimen>
+       <dimen name="s2nd_margin_normal_v2">60dip</dimen>
+       
+       <!--hx  -->
+       
+            <dimen name="height_top_bar">46dp</dimen>
+    <dimen name="padding_search_bar">5dp</dimen>
+    <dimen name="height_row_weixin">59dp</dimen>
+    <dimen name="size_avatar">50dp</dimen>
+    <dimen name="margin_chat_activity">5dp</dimen>
+    <dimen name="field_textsize">14sp</dimen>
+    <dimen name="field_margin_right">5dp</dimen>
+    <dimen name="call_button_padding_vertical">10dp</dimen>
+    <dimen name="call_button_padding_left">25dp</dimen>
+    <dimen name="call_button_padding_right">25dp</dimen>
+    <dimen name="sidebar_text_size">10dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+     <dimen name="image_thumbnail_size">100dp</dimen>
+    <dimen name="image_thumbnail_spacing">1dp</dimen>
+    
+    
+        <!--everyday每日鲜  -->
+       
+    <dimen name="topImage_height">200dp</dimen>
+    <dimen name="topImage_width">118dp</dimen>
+    <dimen name="botImage_height">130dp</dimen>
+    <dimen name="botImage_width">76dp</dimen>
+    <dimen name="topText_width">68dp</dimen>
+    <dimen name="botText_width">68dp</dimen>
+       
+       
+
+</resources>

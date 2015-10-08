@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/new_bg" >
+
+
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="90dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/sad" />
+
+        <TextView
+            android:id="@+id/tolookText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="180dp"
+            android:text="失败了！"
+            android:textColor="@color/app_main_color"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tolookText5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="210dp"
+            android:text="请重新操作！"
+            android:textColor="@color/s2nd_divider_line_color"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/my_surface_shinning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tolookText"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/s2nd_margin_normal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/s2nd_base_button_background"
+            android:paddingBottom="@dimen/s2nd_margin_normal"
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp"
+            android:paddingTop="@dimen/s2nd_margin_normal"
+            android:text="下次来电话jiu"
+            android:textColor="@color/s2nd_app_main_color"
+            android:textSize="@dimen/s2nd_text_size_normal"
+            android:visibility="gone" />
+        
+        
+         <ImageView
+            android:id="@+id/my_surface_cancle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/circlex" />
+
+       
+
+</RelativeLayout>

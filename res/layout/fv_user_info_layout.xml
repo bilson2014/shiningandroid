@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.panfeng.shinning"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/s2nd_app_background_color"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/newlistbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/new_second_top_title" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+      
+        android:padding="@dimen/s2nd_margin_normal"
+        android:background="@color/color_white"
+        android:orientation="vertical" >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp" >
+<!-- 
+            <ImageView
+                android:id="@+id/user_state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginTop="@dimen/s2nd_margin_normal"
+                android:src="@drawable/shinning_friend_vip"
+                android:visibility="invisible" /> -->
+
+            <ImageView
+                android:id="@+id/user_img"
+                android:layout_width="85dp"
+                android:layout_height="85dp"
+                android:layout_marginTop="@dimen/s2nd_margin_normal"
+                android:src="@drawable/s2nd_default_user_icon" />
+
+        </FrameLayout>
+
+        <EditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="30dp"
+            android:background="#00000000"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="请设置您的昵称"
+            android:text=""
+            android:maxLength="8"
+            android:textColor="@color/s2nd_text_color_lv1"
+            android:textCursorDrawable="@color/color_blue"
+            android:textSize="@dimen/s2nd_wordsize_big" >
+        </EditText>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/s2nd_margin_normal_v2"
+            android:layout_marginRight="@dimen/s2nd_margin_normal_v2"
+            android:layout_marginTop="@dimen/s2nd_margin_normal"
+            android:layout_marginBottom="@dimen/s2nd_margin_normal"
+            android:background="@color/s2nd_divider_line_color" />
+
+        <EditText
+            android:id="@+id/phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="#00000000"
+            android:editable="false"
+            android:ems="10"
+            android:gravity="center"
+            android:textColor="@color/s2nd_text_color_lv3"
+            android:textCursorDrawable="@color/s2nd_divider_line_color"
+            android:textSize="@dimen/s2nd_wordsize_mid" >
+        </EditText>
+
+      
+    </LinearLayout>
+    
+    
+    
+     <TextView
+        android:id="@+id/suretext"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/s2nd_base_button_background_3"
+        android:gravity="center"
+        android:padding="@dimen/s2nd_margin_normal"
+        android:text="确认"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/s2nd_wordsize_big" />
+    
+    
+    
+
+</LinearLayout>

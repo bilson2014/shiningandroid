@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_white"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/s2nd_clicked_gray_btn"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="65dp"
+            android:layout_gravity="center_vertical"
+            android:padding="20dp"
+            android:src="@drawable/myshinicon" >
+        </ImageView>
+
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="70dp"
+            android:background="@color/s2nd_divider_line_color"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/song_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="555"
+                android:textSize="@dimen/s2nd_wordsize_mid" />
+
+            <TextView
+                android:id="@+id/song_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="555"
+                android:textColor="@color/s2nd_text_color_lv3"
+                android:textSize="@dimen/s2nd_wordsize_small" />
+
+            <TextView
+                android:id="@+id/song_path"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical" >
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/tocamera" >
+            </ImageView>
+        </RelativeLayout>
+    </LinearLayout>
+    </LinearLayout>

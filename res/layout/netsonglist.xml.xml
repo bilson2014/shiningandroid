@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/new_bg"
+    android:orientation="vertical" >
+
+       <include
+        android:id="@+id/newlistbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/new_second_top_title" />
+
+    <ListView
+        android:id="@+id/netvideolist"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

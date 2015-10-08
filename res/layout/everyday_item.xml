@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/rank_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="06"
+                android:textColor="@color/app_main_color"
+                android:textSize="40dp" />
+
+            <View
+                android:layout_width="30dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="1dp"
+                android:background="@color/s2nd_text_color_lv3" />
+
+            <TextView
+                android:id="@+id/rank_month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="7月"
+                android:textColor="@color/s2nd_text_color_lv3"
+                android:textSize="14dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/everylayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+     
+        
+      >
+
+        <RelativeLayout
+            android:layout_marginLeft="10dp"
+            android:layout_width="@dimen/more_width"
+            android:layout_height="@dimen/more_height"
+            android:layout_alignParentLeft="true"
+            android:background="@color/color_white" >
+
+            <ImageView
+                android:id="@+id/rank_img_top1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ifnot" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_white"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/rank_img_top1_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="left"
+                    android:maxLength="7"
+                    android:text="给我一个大大大"
+                    android:textColor="@color/s2nd_text_color_newlv1"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="3dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/settime" />
+
+                    <TextView
+                        android:id="@+id/play1"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="10"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_width="@dimen/more_width"
+            android:layout_height="@dimen/more_height"
+            android:background="@color/color_white" >
+
+            <ImageView
+                android:id="@+id/rank_img_top2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ifnot" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_white"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/rank_img_top2_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="left"
+                    android:maxLength="7"
+                    android:text="hhh"
+                    android:textColor="@color/s2nd_text_color_newlv1"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="3dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/settime" />
+
+                    <TextView
+                        android:id="@+id/play2"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="10"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            
+            android:layout_alignParentRight="true"
+            android:layout_width="@dimen/more_width"
+            android:layout_height="@dimen/more_height"
+            android:layout_marginRight="10dp"
+            android:background="@color/color_white" >
+
+            <ImageView
+                android:id="@+id/rank_img_top3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ifnot" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_white"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/rank_img_top3_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="left"
+                    android:maxLength="7"
+                    android:text="hhh"
+                    android:textColor="@color/s2nd_text_color_newlv1"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="3dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/settime" />
+
+                    <TextView
+                        android:id="@+id/play3"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="10"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+       
+        android:layout_below="@+id/everylayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+      
+        >
+
+        <RelativeLayout
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_width="@dimen/more_width"
+            android:layout_height="@dimen/more_height"
+            android:background="@color/color_white" >
+
+            <ImageView
+                android:id="@+id/rank_img_bottom1"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ifnot" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_white"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/rank_img_bottom1_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="left"
+                    android:maxLength="7"
+                    android:text="hhh"
+                    android:textColor="@color/s2nd_text_color_newlv1"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="3dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/settime" />
+
+                    <TextView
+                        android:id="@+id/play4"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="10"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_width="@dimen/more_width"
+            android:layout_height="@dimen/more_height"
+            android:background="@color/color_white" >
+
+            <ImageView
+                android:id="@+id/rank_img_bottom2"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ifnot" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_white"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/rank_img_bottom2_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="left"
+                    android:maxLength="7"
+                    android:text="hhh"
+                    android:textColor="@color/s2nd_text_color_newlv1"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="3dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/settime" />
+
+                    <TextView
+                        android:id="@+id/play5"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="10"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginRight="10dp"
+            android:layout_width="@dimen/more_width"
+            android:layout_height="@dimen/more_height"
+            android:layout_alignParentRight="true"
+            android:background="@color/color_white" >
+
+            <ImageView
+                android:id="@+id/rank_img_bottom3"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ifnot" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/color_white"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/rank_img_bottom3_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="left"
+                    android:maxLength="7"
+                    android:text="hhh"
+                    android:textColor="@color/s2nd_text_color_newlv1"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="horizontal" >
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="3dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/settime" />
+
+                    <TextView
+                        android:id="@+id/play6"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="10"
+                        android:textSize="10sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

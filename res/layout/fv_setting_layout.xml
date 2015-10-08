@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.panfeng.shinning"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/s2nd_app_background_color"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/newlistbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/new_second_top_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/part1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/s2nd_margin_normal"
+                android:layout_marginTop="@dimen/s2nd_margin_normal"
+                android:background="@color/color_white"
+                android:orientation="vertical" >
+
+                <include
+                    android:id="@+id/item1_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/fv_setting_on_off_item"
+                    android:visibility="gone"
+                     />
+
+                <include
+                    android:id="@+id/item1_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    layout="@layout/fv_setting_on_off_down_item" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/part1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:orientation="vertical" >
+
+                <include
+                    android:id="@+id/item2_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/fv_setting_info_item" />
+                
+     
+
+                
+
+            
+                
+                <include
+                    android:id="@+id/item2_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/fv_setting_info_item" />
+                
+                    <include
+                    android:id="@+id/item2_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/fv_setting_info_item_v4" />
+                
+                <include
+                    android:id="@+id/item2_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    layout="@layout/fv_setting_info_item_v2" />
+
+              
+
+     
+
+            </LinearLayout>
+            
+            
+                 <include
+                         
+                    android:id="@+id/item2_4"
+                    android:layout_marginTop="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/fv_setting_info_button_item" />
+        
+            
+        </LinearLayout>
+    </ScrollView>
+    
+    
+
+        
+    
+        
+    
+        
+ 
+    
+                    
+   
+    
+
+</LinearLayout>

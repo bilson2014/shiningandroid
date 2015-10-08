@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.panfeng.shinning"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/s2nd_margin_normal"
+        android:background="@color/color_white" >
+
+        <FrameLayout
+            android:id="@+id/part1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <include
+                android:id="@+id/video_plugin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                layout="@layout/s2nd_video_player" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/part2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/part2_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/color_white"
+                android:orientation="vertical"
+                android:padding="@dimen/s2nd_margin_normal" >
+
+                <TextView
+                    android:id="@+id/red_txt_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="4dp"
+                    android:text=""
+                    android:textColor="@color/s2nd_app_main_color"
+                    android:textSize="@dimen/s2nd_text_size_normal"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/media_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="60dp"
+                    android:paddingLeft="10dp"
+                    android:text="视频名字"
+                    android:textColor="@color/s2nd_text_color_lv1"
+                    android:textSize="@dimen/s2nd_wordsize_mid"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/author_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="60dp"
+                    android:layout_marginTop="@dimen/s2nd_margin_small_v2"
+                    android:paddingLeft="10dp"
+                    android:text="视频作者名字"
+                    android:textColor="@color/s2nd_text_color_lv2"
+                    android:textSize="@dimen/s2nd_wordsize_small" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_weight="1" />
+
+            
+            </LinearLayout>
+
+            <!-- 蒙灰 -->
+
+            <FrameLayout
+                android:id="@+id/part2_center"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@drawable/s2nd_video_item_mask"
+                android:orientation="horizontal" >
+
+                <com.panfeng.shining.widgets.TileButton
+                    android:id="@+id/play_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/s2nd_play_btn" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/part2_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="80dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="bottom"
+                    android:orientation="vertical" >
+
+                    <!--
+                         <View
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:background="@color/s2nd_app_main_color" />
+                    -->
+
+                    <LinearLayout
+                        android:id="@+id/part2_bottom_sub"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/color_white"
+                        android:gravity="center_vertical|right"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/s2nd_margin_normal" >
+                        
+
+                    </LinearLayout>
+                    
+                    
+                    
+                    
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="#dfe0e3" />
+                </LinearLayout>
+                
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@null"
+                     >
+                
+                            <com.panfeng.shining.widgets.TileButton
+                    android:id="@+id/share_btn"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentRight="true"
+                     android:layout_centerVertical="true"
+                    android:background="@drawable/s2nd_video_share_btn" />
+                
+                
+
+                <ImageView
+                    android:id="@+id/save_video"
+                    android:layout_alignParentLeft="true"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                     android:layout_centerVertical="true"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="30dp"
+                    />
+
+                <ImageView
+                    android:id="@+id/shinning_setting"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/setling" />
+                
+                </RelativeLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    
+
+    
+
+    <FrameLayout
+        android:id="@+id/video_player_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <!-- <io.vov.vitamio.widget.CenterLayout -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="match_parent" -->
+        <!-- android:background="#ff000000" -->
+        <!-- android:orientation="vertical" > -->
+
+
+        <!-- <io.vov.vitamio.widget.VideoView -->
+        <!-- android:id="@+id/video" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="match_parent" -->
+        <!-- android:layout_centerHorizontal="true" -->
+        <!-- android:layout_centerVertical="true" /> -->
+        <!-- </io.vov.vitamio.widget.CenterLayout> -->
+
+        <com.panfeng.shining.widgets.TyuVideoView
+            android:id="@+id/video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+        <FrameLayout
+            android:id="@+id/mix_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+         
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal" >
+
+            <com.panfeng.shining.widgets.TyuProgressView
+                android:id="@+id/progressBar1"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:padding="5dp" />
+
+            <TextView
+                android:id="@+id/cache_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="0%"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/ur_text_size_6" />
+        </FrameLayout>
+    </FrameLayout>
+
+</LinearLayout>

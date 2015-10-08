@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/more_width"
+    android:layout_height="@dimen/more_height"
+    android:background="@color/color_white"
+    
+ >
+
+    <in.srain.cube.image.CubeImageView
+        android:id="@+id/moremedia_img"
+        android:layout_width="@dimen/more_width"
+        android:layout_height="@dimen/more_height"
+        android:scaleType="centerCrop" />
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="fill_parent"
+        android:background="@color/color_white"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/more_media_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:gravity="left"
+            android:maxLength="7"
+            android:textColor="@color/s2nd_text_color_newlv1"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/settime" />
+
+            <TextView
+                android:id="@+id/more_media_look"
+                android:layout_width="@dimen/botText_width"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

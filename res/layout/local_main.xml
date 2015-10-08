@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/new_bg"
+    android:orientation="vertical"
+    tools:context=".LocalVideoActivity" >
+
+   <include
+        android:id="@+id/locallistbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/new_second_top_title" />
+    
+    
+   
+     <GridView
+        android:id="@+id/locallist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dip"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:columnWidth="50dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="3"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="30dp" />
+
+</LinearLayout>

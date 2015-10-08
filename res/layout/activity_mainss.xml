@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f0f2f3"
+    android:orientation="vertical"
+    tools:context=".MoreMeidaActivityV2" >
+
+     <include
+        android:id="@+id/newlistbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/new_second_top_title" />
+
+    <ImageView
+        android:id="@+id/video_find"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/newlistbar"
+        android:visibility="gone"
+        android:src="@drawable/task" />
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:id="@+id/reVideo"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/video_find" >
+
+        <VideoView
+            android:id="@+id/video_set"
+            android:layout_width="fill_parent"
+            android:layout_height="300dp"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/play_video"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="130dp"
+            android:background="@drawable/s2nd_play_btn" />
+    </RelativeLayout>
+    
+      <ImageView
+        android:id="@+id/task"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/reVideo"
+        android:visibility="gone"
+        android:src="@drawable/find" />
+    
+
+    <ExpandableListView
+        android:id="@+id/expandableListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/task" >
+    </ExpandableListView>
+    
+      <ImageView
+        
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/expandableListView"
+        android:src="@drawable/queend" />
+    
+    
+
+</RelativeLayout>

@@ -1,0 +1,22 @@
+package tyu.common.net;
+
+
+public class TyuDefine {
+	
+	
+	//服务器相关
+	//外部ip
+	static public String HOST = "http://42.96.185.191:8080/web1/";
+//	static public String HOST = "http://192.168.1.108:8080/web1/";
+	
+	
+	
+	static public String common_password = "1234";
+	static public String CMD_KEY = "cmd";
+	
+	static public String CMD_COMMON_DATA = "common_data";
+	
+	static public String CMD_REG = "reg_info";
+	static public String CMD_update = "reg_info";
+	static public String KEY_ARTIC = "artic";
+}

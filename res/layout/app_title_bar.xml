@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.panfeng.shinning"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title_height"
+    android:background="@color/app_main_color"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="5dp" >
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center"
+            android:src="@drawable/title_left" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/txt"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="changj"
+        
+        android:textColor="#ffffff"
+        android:textSize="@dimen/ur_text_size_8"
+         />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="#4d4d4d"
+        android:visibility="invisible" />
+
+    <FrameLayout
+        android:id="@+id/star_frame"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/title_star"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerInside"
+            android:layout_gravity="center"
+            android:src="@drawable/title_star" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginRight="5dp" >
+
+        <ImageView
+            android:id="@+id/more"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center"
+            android:src="@drawable/add_friends"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+</LinearLayout>

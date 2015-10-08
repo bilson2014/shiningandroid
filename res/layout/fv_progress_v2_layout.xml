@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.panfeng.shinning"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/new_bg" >
+
+    <com.panfeng.shining.progress.ArcProgressLu
+        android:id="@+id/progressBar1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        app:arc_bottom_text="上传中."
+        app:arc_progress="0"
+        app:arc_text_color="@color/app_main_color"
+        app:arc_text_size="24sp"
+        app:arc_unfinished_color="@color/app_main_color" />
+
+</RelativeLayout>

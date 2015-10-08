@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/s2nd_app_background_color"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        layout="@layout/s2nd_app_title_bar" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ListView
+            android:id="@+id/friends_list"
+            style="@style/ur_common_list_style"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#00000000"
+            android:listSelector="#00000000" />
+
+        <LinearLayout
+            android:id="@+id/show_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:layout_gravity="center"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_gravity="center"
+                android:src="@drawable/s2nd_fr_icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/s2nd_margin_normal"
+                android:text="这里可以看到好友设定的铃声哦"
+                android:textColor="@color/s2nd_text_color_lv2"
+                android:textSize="@dimen/s2nd_wordsize_mid" />
+
+            <TextView
+                android:id="@+id/veri_number"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/s2nd_margin_normal"
+                android:text="需要先验证手机号码哦~"
+                android:textColor="@color/s2nd_app_main_color"
+                android:textSize="@dimen/s2nd_wordsize_mid" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>

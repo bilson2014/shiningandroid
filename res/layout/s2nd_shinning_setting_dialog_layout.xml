@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#00000000"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/s2nd_margin_normal"
+        android:background="@color/color_white"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/s2nd_margin_normal"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                
+                android:layout_weight="1"
+                android:gravity="left"
+                android:text="提示:"
+                android:textColor="@color/s2nd_text_color_lv1"
+                android:textSize="@dimen/s2nd_wordsize_big" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/s2nd_close_dialog" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="成功啦!快打个电话看看吧"
+            android:textColor="@color/s2nd_text_color_lv1"
+            android:textSize="@dimen/s2nd_wordsize_mid" />
+
+        <ImageView
+            android:id="@+id/media_image"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/s2nd_margin_normal"
+            android:scaleType="centerCrop"
+            android:src="@drawable/s2nd_default_user_icon" />
+
+        <TextView
+            android:id="@+id/my_shinning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/s2nd_margin_normal"
+            android:background="@drawable/s2nd_base_button_background"
+            android:paddingLeft="70dp"
+            android:paddingTop="@dimen/s2nd_margin_normal"
+            android:paddingRight="70dp"
+            android:paddingBottom="@dimen/s2nd_margin_normal"
+            android:text="我的闪铃"
+            android:textColor="@color/s2nd_app_main_color"
+            android:textSize="@dimen/s2nd_text_size_normal" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/s2nd_app_background_color"
+    android:orientation="vertical" >
+
+<include
+        android:id="@+id/newlistbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/new_second_top_title" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/shareimg" />
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:text="闪铃"
+        android:textColor="@color/s2nd_text_color_lv1"
+        android:textSize="@dimen/s2nd_wordsize_mid"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="扫描二维码"
+            android:textColor="#ff333333"
+            android:textSize="@dimen/s2nd_wordsize_small" />
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/share"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:background="@drawable/s2nd_base_button_background_3"
+        android:gravity="center"
+        android:padding="@dimen/s2nd_margin_normal"
+        android:text="分享应用"
+        android:textColor="@color/color_white"
+        android:textSize="@dimen/s2nd_text_size_normal" />
+
+</LinearLayout>

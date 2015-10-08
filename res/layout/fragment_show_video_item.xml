@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:app="http://schemas.android.com/apk/res/com.panfeng.shinning"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000" >
+   
+
+    <SurfaceView
+        android:id="@+id/show_video_surfaceView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+    <ImageView
+        android:id="@+id/show_video_imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+  
+    <com.panfeng.shining.progress.ArcProgressLu
+        android:id="@+id/show_video_arc_progress"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="160dp"
+        android:visibility="gone"
+        app:arc_bottom_text="缓冲中."
+        app:arc_progress="0"
+        app:arc_text_color="@color/app_main_color"
+        app:arc_text_size="24sp"
+        app:arc_unfinished_color="@color/app_main_color" />
+    
+
+    <TextView
+        android:id="@+id/show_video_editText"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:background="#000"
+        android:text="." />
+
+    <ImageView
+        android:id="@+id/myvideo_share"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="150dp"
+        android:layout_marginLeft="50dp"
+        android:src="@drawable/sharebtntitle" />
+
+    <ImageView
+        android:id="@+id/myvideo_set"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginRight="50dp"
+        android:src="@drawable/s2nd_shinning_setting_1_btn" />
+
+    <ImageView
+        android:id="@+id/moreinfo"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/circlex" />
+
+    <ImageView
+        android:id="@+id/myvideo_save"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/tosave" />
+
+</RelativeLayout>

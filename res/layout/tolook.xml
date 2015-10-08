@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/new_bg" >
+
+    <RelativeLayout
+        android:id="@+id/toMyShin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="90dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/smile" />
+
+        <TextView
+            android:id="@+id/tolookText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="180dp"
+            android:text="已成功上传到云端！"
+            android:textColor="@color/app_main_color"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tolookText5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="210dp"
+            android:text="快分享给好友吧！"
+            android:textColor="@color/s2nd_divider_line_color"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/my_surface_shinning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tolookText"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/s2nd_margin_normal"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/s2nd_base_button_background"
+            android:paddingBottom="@dimen/s2nd_margin_normal"
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp"
+            android:paddingTop="@dimen/s2nd_margin_normal"
+            android:text="下次来电话jiu"
+            android:textColor="@color/s2nd_app_main_color"
+            android:textSize="@dimen/s2nd_text_size_normal"
+            android:visibility="gone" />
+
+        <View
+            android:id="@+id/lookline"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:layout_above="@+id/tolookText9"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="30dp"
+            android:background="@color/s2nd_divider_line_color" />
+
+        <TextView
+            android:id="@+id/tolookText9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/lookll"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="40dp"
+            android:text="分享到:"
+            android:textColor="@color/s2nd_text_color_lv3"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/lookll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/my_surface_cancle"
+            android:layout_marginBottom="50dp"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="0.5"
+                android:padding="5dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/weixin"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/lweixin" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/py"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/lpengyou" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/qq"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/lqq" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/wb"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:src="@drawable/lwb" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_weight="0.5"
+                android:padding="5dp"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/my_surface_cancle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/circlex" />
+    </RelativeLayout>
+
+</RelativeLayout>

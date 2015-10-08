@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ebm="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@null" >
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vPager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/tab_view"
+        android:layout_gravity="center"
+        android:persistentDrawingCache="animation" />
+
+    <View
+        android:id="@+id/tab_view"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@+id/tabbot"
+        android:background="@color/s2nd_divider_line_color" />
+
+    <LinearLayout
+        android:id="@+id/tabbot"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/color_white"
+        android:orientation="horizontal" >
+
+        <RelativeLayout
+            android:id="@+id/re_0"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/img_0"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/videolistbg"
+                android:scaleType="fitXY" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/re_1"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/img_1"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/rankbg"
+                android:scaleType="fitXY" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/re_2"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/img_2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/main_bar_btn"
+                android:scaleType="fitXY"
+                android:visibility="invisible" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/re_3"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/img_3"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/otherbg"
+                android:scaleType="fitXY" >
+            </ImageView>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/re_4"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/img_4"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/shinsetbg"
+                android:scaleType="fitXY" >
+            </ImageView>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" >
+
+        <com.panfeng.shining.activity.s2nd.ExpandableMenuOverlay
+            android:id="@+id/button_menu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="5dp"
+            android:layout_centerVertical="true"
+            android:src="@drawable/main_tab_btn"
+            ebm:bottomPad="0.1"
+            ebm:dimAmount="0.8"
+            ebm:distanceX="0.25"
+            ebm:distanceY="0.17"
+            ebm:leftButtonSrc="@drawable/toplaymyvideo"
+            ebm:leftButtonText="@string/action_left"
+            ebm:mainButtonSize="0.13"
+            ebm:otherButtonSize="0.22"
+            ebm:rightButtonSrc="@drawable/tolocal"
+            ebm:rightButtonText="@string/action_right" />
+    </RelativeLayout>
+
+</RelativeLayout>

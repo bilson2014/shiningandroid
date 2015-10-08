@@ -1,0 +1,100 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MoreMeidaActivityV2" >
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+    
+    
+
+    
+    
+       <TextView
+        android:id="@+id/textView1"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:text="处理中..."
+        android:background="@drawable/wordb"
+        android:gravity="center"
+        android:textSize="@dimen/s2nd_wordsize_small"
+        android:textColor="@color/color_white"
+        android:visibility="gone"
+        />
+    
+    
+    
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:visibility="gone" />
+
+ 
+
+    <RelativeLayout
+        android:id="@+id/rephoto"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="90dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/delete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/start"
+            android:enabled="false"
+            android:background="@drawable/sure" />
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/musicplayer" />
+        
+            <Button
+            android:id="@+id/changeCamera"
+            
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/start"
+            android:visibility="gone"
+            android:background="@drawable/change" />
+            
+            
+    </RelativeLayout>
+    
+    
+        <Button
+           
+            
+            android:id="@+id/cancle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/circlex"
+            android:layout_marginBottom="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+        />
+        
+            
+    
+
+</RelativeLayout>

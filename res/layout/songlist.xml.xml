@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/new_bg" >
+
+     <include
+        android:id="@+id/music_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/new_second_top_title" />
+
+    <LinearLayout
+        android:id="@+id/songlist_line1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/music_bar"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/songlist_part_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_white"
+            android:orientation="horizontal"
+            android:paddingTop="20dp" >
+
+            <LinearLayout
+                android:id="@+id/song_chinese"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/songlist1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="中文"
+                    android:textColor="@color/s2nd_text_color_lv3"
+                    android:textSize="@dimen/s2nd_wordsize_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/song_english"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/songlist2" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="外语"
+                    android:textColor="@color/s2nd_text_color_lv3"
+                    android:textSize="@dimen/s2nd_wordsize_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/song_dou"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/songlist3" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="搞笑"
+                    android:textColor="@color/s2nd_text_color_lv3"
+                    android:textSize="@dimen/s2nd_wordsize_small" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/songlist_part_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/songlist_part_1"
+            android:background="@color/color_white"
+            android:orientation="horizontal"
+            android:paddingBottom="20dp"
+            android:paddingTop="10dp" >
+
+            <LinearLayout
+                android:id="@+id/song_katong"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/songlist4" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="动漫"
+                    android:textColor="@color/s2nd_text_color_lv3"
+                    android:textSize="@dimen/s2nd_wordsize_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/song_god"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/songlist5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="神曲"
+                    android:textColor="@color/s2nd_text_color_lv3"
+                    android:textSize="@dimen/s2nd_wordsize_small" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/song_movie"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/songlist6" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="影视"
+                    android:textColor="@color/s2nd_text_color_lv3"
+                    android:textSize="@dimen/s2nd_wordsize_small" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/songlistview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/songlist_line1" />
+
+</RelativeLayout>

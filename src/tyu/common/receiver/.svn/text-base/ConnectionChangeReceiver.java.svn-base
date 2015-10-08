@@ -1,0 +1,52 @@
+package tyu.common.receive;
+
+import tyu.common.base.SplashManager;
+import tyu.common.base.TyuPreferenceManager;
+import tyu.common.service.AutoAuctionService;
+import tyu.common.service.CommonUpdateService;
+import tyu.common.util.NetworkUtils;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.util.Log;
+
+import com.wlzc.apn.client.ServiceManager;
+import com.wlzc.capturegirl.R;
+
+public class ConnectionChangeReceiver extends BroadcastReceiver {
+	public static final String ERR_TAG = "ConnectionChangeReceiver.java";
+	ConnectivityManager connectivityManager;
+	Context thisContext;
+
+	private static boolean mReporting = false;
+
+	@Override
+	public void onReceive(Context context, Intent intent) {
+
+		thisContext = context;
+		int state = NetworkUtils.getNetworkState(thisContext);
+		if(state == NetworkUtils.NONE){
+			//没有网络
+		}else {
+			//
+			Intent updateservice = new Intent();
+			updateservice.setClass(context, CommonUpdateService.class);
+			context.startService(updateservice);
+			Intent auctionIntent = new Intent();
+			auctionIntent.setClass(context, AutoAuctionService.class);
+			context.startService(auctionIntent);
+			ServiceManager serviceManager = new ServiceManager(context);
+	        serviceManager.setNotificationIcon(R.drawable.ic_launcher);
+	        serviceManager.startService();
+	        
+	        if(TyuPreferenceManager.isAnotherDay(TyuPreferenceManager.getSplashLastCheckTime())){
+		        SplashManager manager = SplashManager.getManager();
+	        	manager.CheckSpashImage();
+	        }
+	        
+		}
+		Log.i("test", "网络变化");
+		
+	}
+}

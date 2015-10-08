@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/new_bg" >
+    <in.srain.cube.views.ptr.PtrClassicFrameLayout
+        android:id="@+id/more_new_head_frame"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent" >
+
+        <in.srain.cube.views.GridViewWithHeaderAndFooter
+            android:id="@+id/grid_view_by_everyday"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="15dip"
+            android:columnWidth="50dp"
+            android:fadingEdge="none"
+            android:focusable="false"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="3"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp" />
+    </in.srain.cube.views.ptr.PtrClassicFrameLayout>
+    
+     <RelativeLayout
+        android:id="@+id/re_error"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
+        >
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="90dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/sad" />
+
+        <TextView
+            android:id="@+id/tolookText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="180dp"
+            android:text="网络不给力啊！"
+            android:textColor="@color/app_main_color"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tolookText5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="210dp"
+            android:text="客官请稍后再试！"
+            android:textColor="@color/s2nd_divider_line_color"
+            android:textSize="13sp" />
+    </RelativeLayout>
+    
+    
+    
+    
+    
+    
+</RelativeLayout>

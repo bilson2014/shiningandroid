@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* Copyright (c) 2011 Tank Tang
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+<resources>
+
+    <attr name="accelerateLinearDecelerateProgressBarStyle" format="reference" />
+    <attr name="clickWheelViewStyle" format="reference" />
+    <attr name="fontTextViewStyle" format="reference" />
+    <attr name="pageIndicatorStyle" format="reference" />
+    <attr name="sectorViewStyle" format="reference" />
+    <attr name="shelfGalleryStyle" format="reference" />
+    <attr name="slideTileViewStyle" format="reference" />
+    <attr name="tileButtonStyle" format="reference" />
+    <attr name="toggleViewStyle" format="reference" />
+    <attr name="waveLayoutStyle" format="reference" />
+    <attr name="webImageViewStyle" format="reference" />
+    <attr name="workspaceStyle" format="reference" />
+    <attr name="adapterViewFlipperStyle" format="reference" />
+    <attr name="duration" format="integer" />
+    <attr name="dotRadius" format="dimension" />
+    <attr name="dotSpacing" format="dimension" />
+    <attr name="dotColor" format="color" />
+    <attr name="radius" format="dimension" />
+    <attr name="interpolator" format="reference" />
+    <attr name="gravity">
+        <flag name="center" value="0x11" />
+        <flag name="top" value="0x30" />
+        <flag name="left" value="0x03" />
+        <flag name="bottom" value="0x50" />
+        <flag name="right" value="0x05" />
+    </attr>
+
+    <declare-styleable name="SectorView">
+        <attr name="radius" />
+        <attr name="animationOffset" format="integer" />
+        <attr name="duration" />
+        <attr name="interpolator" />
+        <attr name="gravity" />
+    </declare-styleable>
+    <declare-styleable name="AccelerateLinearDecelerateProgressBar">
+        <attr name="dotCount" format="integer" />
+        <attr name="duration" />
+        <attr name="dotRadius" />
+        <attr name="dotSpacing" />
+        <attr name="dotColor" />
+    </declare-styleable>
+    <declare-styleable name="PageIndicator">
+        <attr name="activePage" format="integer" />
+        <attr name="pageCount" format="integer" />
+        <attr name="dotRadius" />
+        <attr name="dotSpacing" />
+        <attr name="dotColor" />
+    </declare-styleable>
+    <declare-styleable name="ToggleView">
+        <attr name="toggle">
+            <enum name="on" value="1" />
+            <enum name="off" value="0" />
+        </attr>
+        <attr name="radius" />
+    </declare-styleable>
+    <declare-styleable name="Workspace">
+        <attr name="showPage" format="integer" />
+        <!-- define the min velocity to perform scroll page action -->
+        <attr name="snapVelocity" format="integer">
+            <enum name="auto" value="-1" />
+        </attr>
+        <attr name="duration" />
+        <attr name="interpolator" />
+        <attr name="bounce" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ClickWheelView">
+        <attr name="radius" />
+        <attr name="centerX" format="integer" />
+        <attr name="centerY" format="integer" />
+        <attr name="flingEnabled" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="WaveLayout">
+        <attr name="maxAmplitude" format="dimension" />
+        <attr name="orientation">
+            <enum name="horizontal" value="0" />
+            <enum name="vertical" value="1" />
+        </attr>
+        <attr name="gravity" />
+    </declare-styleable>
+    <declare-styleable name="TileButton">
+        <attr name="maxRotateDegree" format="integer" />
+        <attr name="maxDepth" format="integer" />
+    </declare-styleable>
+    <declare-styleable name="FontTextView">
+        <attr name="fontPath" format="string" />
+    </declare-styleable>
+    <declare-styleable name="SlideTileView"></declare-styleable>
+    <declare-styleable name="AdapterViewFlipper_Layout">
+        <attr name="layout_gravity" format="flags" />
+    </declare-styleable>
+    <declare-styleable name="AdapterViewFlipper">
+        <attr name="inAnimation" format="reference" />
+        <attr name="outAnimation" format="reference" />
+        <attr name="flipInterval" format="integer" />
+        <attr name="autoStart" format="boolean" />
+    </declare-styleable>
+
+    <attr name="slideMenuStyle" format="reference" />
+
+    <declare-styleable name="SlideMenu_Layout">
+        <attr name="layout_role" format="enum">
+            <enum name="content" value="0" />
+            <enum name="primaryMenu" value="1" />
+            <enum name="secondaryMenu" value="2" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="SlideMenu">
+        <attr name="primaryShadowWidth" format="dimension" />
+        <attr name="secondaryShadowWidth" format="dimension" />
+        <attr name="primaryShadowDrawable" format="reference" />
+        <attr name="secondaryShadowDrawable" format="reference" />
+        <attr name="edgeSlide" format="boolean" />
+        <attr name="edgeSlideWidth" format="dimension" />
+        <attr name="slideDirection" format="flags">
+            <flag name="left" value="1" />
+            <flag name="right" value="2" />
+        </attr>
+        <attr name="interpolator" />
+    </declare-styleable>
+    <declare-styleable name="GifMoviewView">
+        <attr name="gif" format="reference" />
+        <attr name="paused" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="CustomTheme">
+        <attr name="gifMoviewViewStyle" format="reference" />
+    </declare-styleable>
+    
+      <declare-styleable name="ArcProgressLu">
+        <attr name="arc_progress" format="integer" />
+        <attr name="arc_angle" format="float" />
+        <attr name="arc_stroke_width" format="dimension" />
+        <attr name="arc_max" format="integer" />
+
+        <attr name="arc_unfinished_color" format="color" />
+        <attr name="arc_finished_color" format="color" />
+
+        <attr name="arc_text_size" format="dimension" />
+        <attr name="arc_text_color" format="color" />
+
+        <attr name="arc_suffix_text" format="string" />
+        <attr name="arc_suffix_text_size" format="dimension" />
+        <attr name="arc_suffix_text_padding" format="dimension" />
+
+        <attr name="arc_bottom_text" format="string" />
+        <attr name="arc_bottom_text_size" format="dimension" />
+    </declare-styleable>
+    
+
+    
+      <!-- slw -->
+      
+      <declare-styleable name="CircleProgress">
+        <attr name="circle_progress" format="integer" />
+        <attr name="circle_max" format="integer" />
+
+        <attr name="circle_unfinished_color" format="color" />
+        <attr name="circle_finished_color" format="color" />
+
+        <attr name="circle_text_size" format="dimension" />
+        <attr name="circle_text_color" format="color" />
+
+        <attr name="circle_prefix_text" format="string" />
+        <attr name="circle_suffix_text" format="string" />
+    </declare-styleable>
+    <declare-styleable name="DonutProgress">
+        <attr name="donut_progress" format="integer" />
+        <attr name="donut_max" format="integer" />
+
+        <attr name="donut_unfinished_color" format="color" />
+        <attr name="donut_finished_color" format="color" />
+
+        <attr name="donut_finished_stroke_width" format="dimension" />
+        <attr name="donut_unfinished_stroke_width" format="dimension" />
+
+        <attr name="donut_text_size" format="dimension" />
+        <attr name="donut_text_color" format="color" />
+
+        <attr name="donut_prefix_text" format="string" />
+        <attr name="donut_suffix_text" format="string" />
+        <attr name="donut_text" format="string" />
+
+        <attr name="donut_background_color" format="color" />
+
+        <attr name="donut_inner_bottom_text" format="string" />
+        <attr name="donut_inner_bottom_text_size" format="dimension" />
+        <attr name="donut_inner_bottom_text_color" format="color" />
+    </declare-styleable>
+
+    
+
+    <declare-styleable name="Themes">
+        <attr name="circleProgressStyle" format="reference" />
+        <attr name="donutProgressStyle" format="reference" />
+        <attr name="arcProgressStyle" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CircleButton">
+        <attr name="cb_color" format="color" />
+        <attr name="cb_pressedRingWidth" format="dimension" />
+    </declare-styleable>
+    
+     <declare-styleable name="ExpandableMenuOverlay">
+        <!-- DIALOG OVERLAY -->
+        <attr name="adjustViewSize" format="boolean"/>
+        <attr name="dimAmount" format="float"/>
+
+        <!-- MENU BUTTON SIZE -->
+        <attr name="mainButtonSize" format="float"/>
+        <attr name="otherButtonSize" format="float"/>
+        <attr name="distanceY" format="float"/>
+        <attr name="distanceX" format="float"/>
+        <attr name="bottomPad" format="float"/>
+
+        <!-- MENU BUTTON RESOURCES -->
+        <attr name="closeButtonSrc" format="integer"/>
+        <attr name="leftButtonSrc" format="integer"/>
+        <attr name="leftButtonText" format="integer"/>
+        <attr name="midButtonSrc" format="integer"/>
+        <attr name="midButtonText" format="integer"/>
+        <attr name="rightButtonSrc" format="integer"/>
+        <attr name="rightButtonText" format="integer"/>
+
+    </declare-styleable>
+    
+      
+
+</resources>

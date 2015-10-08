@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/tab_top" />
+     <android.support.v4.view.ViewPager
+        android:id="@+id/id_viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_weight="1" >
+    </android.support.v4.view.ViewPager>
+    <include
+        android:id="@+id/include2"
+        layout="@layout/sort_bar"/>
+</LinearLayout>
