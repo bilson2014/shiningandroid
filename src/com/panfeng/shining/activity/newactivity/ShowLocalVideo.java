@@ -23,6 +23,7 @@ import android.os.Environment;
 import android.util.Log;
 import android.view.SurfaceView;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
@@ -50,6 +51,7 @@ public class ShowLocalVideo extends Activity  {
 
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); 
 		setContentView(R.layout.localvideo);
 
 		Intent intent = this.getIntent();

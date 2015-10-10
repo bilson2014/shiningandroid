@@ -55,6 +55,7 @@ import com.panfeng.shining.camera.ChooseMusic;
 import com.panfeng.shining.db.DBAdapter;
 import com.panfeng.shining.receiver.AddVideoReceive;
 import com.panfeng.shining.tools.CommonTools;
+import com.panfeng.shining.tools.MtaTools;
 import com.panfeng.shinning.R;
 
 public class TabHostActivity extends Activity implements OnClickListener {
@@ -140,6 +141,7 @@ public class TabHostActivity extends Activity implements OnClickListener {
 	String videoBase = pathString + File.separator + "com.panfeng.shinning"
 			+ File.separator + "baseVideo";
 	String basePath = videoBase + File.separator + "base.mp4";
+	String holPath = videoBase + File.separator + "hol.mp4";
 
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
@@ -202,8 +204,9 @@ public class TabHostActivity extends Activity implements OnClickListener {
 
 		Log.i("xyz", "basePath" + basePath);
 		File f = new File(basePath);
+		File fs = new File(holPath);
 
-		if (!f.exists()) {
+		if (!f.exists()||!fs.exists()) {
 
 			copyResToSdcard();
 		}
@@ -292,6 +295,10 @@ public class TabHostActivity extends Activity implements OnClickListener {
 							break;
 						case RIGHT:
 							menuOverlay.getButtonMenu().toggle();
+							
+							
+							MtaTools.MtaLocalVideo(context);
+							
 							new Thread(new Runnable() {
 								@Override
 								public void run() {
@@ -326,7 +333,6 @@ public class TabHostActivity extends Activity implements OnClickListener {
 		String videoBase = pathString + File.separator + "com.panfeng.shinning"
 				+ File.separator + "baseVideo";
 		String basePath = videoBase + File.separator + "base.mp4";
-		Log.i("xyz", "basePath" + basePath);
 		File f = new File(basePath);
 
 		Field[] raw = R.raw.class.getFields();
@@ -335,7 +341,7 @@ public class TabHostActivity extends Activity implements OnClickListener {
 				// System.out.println("R.raw." + r.getName());
 				int id = getResources().getIdentifier(r.getName(), "raw",
 						getPackageName());
-				if (!r.getName().equals("base")) {
+				if (!r.getName().equals("base")&&!r.getName().equals("hol")) {
 					String path = videoString + "/" + r.getName() + ".m4a";
 					Log.i("video", "you" + path);
 					BufferedOutputStream bufEcrivain = new BufferedOutputStream(
@@ -471,7 +477,6 @@ public class TabHostActivity extends Activity implements OnClickListener {
 
 				img0.setBackgroundResource(R.drawable.videolist);
 				img1.setBackgroundResource(R.drawable.rankbg);
-				img2.setBackgroundResource(R.drawable.main_bar_btn);
 				img3.setBackgroundResource(R.drawable.otherbg);
 				img4.setBackgroundResource(R.drawable.shinsetbg);
 				mpAdapter.notifyDataSetChanged();
@@ -482,7 +487,6 @@ public class TabHostActivity extends Activity implements OnClickListener {
 				index = 1;
 				img0.setBackgroundResource(R.drawable.videolistbg);
 				img1.setBackgroundResource(R.drawable.rank);
-				img2.setBackgroundResource(R.drawable.main_bar_btn);
 				img3.setBackgroundResource(R.drawable.otherbg);
 				img4.setBackgroundResource(R.drawable.shinsetbg);
 
@@ -493,7 +497,6 @@ public class TabHostActivity extends Activity implements OnClickListener {
 				index = 2;
 				img0.setBackgroundResource(R.drawable.videolistbg);
 				img1.setBackgroundResource(R.drawable.rankbg);
-				img2.setBackgroundResource(R.drawable.main_bar_btn);
 				img3.setBackgroundResource(R.drawable.other);
 				img4.setBackgroundResource(R.drawable.shinsetbg);
 
@@ -504,7 +507,6 @@ public class TabHostActivity extends Activity implements OnClickListener {
 				index = 3;
 				img0.setBackgroundResource(R.drawable.videolistbg);
 				img1.setBackgroundResource(R.drawable.rankbg);
-				img2.setBackgroundResource(R.drawable.main_bar_btn);
 				img3.setBackgroundResource(R.drawable.otherbg);
 				img4.setBackgroundResource(R.drawable.shinset);
 
@@ -543,7 +545,6 @@ public class TabHostActivity extends Activity implements OnClickListener {
 
 			img0.setBackgroundResource(R.drawable.videolist);
 			img1.setBackgroundResource(R.drawable.rankbg);
-			img2.setBackgroundResource(R.drawable.main_bar_btn);
 			img3.setBackgroundResource(R.drawable.otherbg);
 			img4.setBackgroundResource(R.drawable.shinsetbg);
 
@@ -561,7 +562,6 @@ public class TabHostActivity extends Activity implements OnClickListener {
 
 			img0.setBackgroundResource(R.drawable.videolistbg);
 			img1.setBackgroundResource(R.drawable.rank);
-			img2.setBackgroundResource(R.drawable.main_bar_btn);
 			img3.setBackgroundResource(R.drawable.otherbg);
 			img4.setBackgroundResource(R.drawable.shinsetbg);
 
@@ -570,87 +570,6 @@ public class TabHostActivity extends Activity implements OnClickListener {
 			break;
 
 		case R.id.re_2:
-			// index = 2;
-			// listViews.set(
-			// 2,
-			// getView("C", new Intent(TabHostActivity.this,
-			// ChooseMusic.class)));
-			//
-
-			img2.setBackgroundResource(R.drawable.main_bar_btnbg);
-
-			//
-			// mpAdapter.notifyDataSetChanged();
-			// mPager.setCurrentItem(2);
-			// View
-			// dlgv=LayoutInflater.from(context).inflate(R.layout.main_dialog,
-			// null);
-			// Dialog dialog = new Dialog(context,
-			// R.style.activity_theme_transparent);
-			// Window window = dialog.getWindow();
-			//
-			// WindowManager.LayoutParams lp = window.getAttributes();
-			// window.setGravity(Gravity.LEFT | Gravity.TOP);
-			//
-			// lp.x = 100; // 新位置X坐标
-			// lp.y = 100; // 新位置Y坐标
-			// lp.width = 300; // 宽度
-			// lp.height = 300; // 高度
-			// lp.alpha = 0.7f; // 透明度
-			// dialog.setContentView(dlgv);
-			// window.setGravity(Gravity.BOTTOM); // 此处可以设置dialog显示的位置
-			// window.setWindowAnimations(R.style.mystyle); // 添加动画
-			// dialog.show();
-			// View dlgv = findViewById(R.id.show_more);
-			// dlgv.setVisibility(View.VISIBLE);
-			// LinearLayout topaly = (LinearLayout) dlgv
-			// .findViewById(R.id.toplaymyvideolayout);
-			//
-			// LinearLayout tolocal = (LinearLayout) dlgv
-			// .findViewById(R.id.tolocallayout);
-			//
-			//
-			// RelativeLayout relocals = (RelativeLayout) dlgv
-			// .findViewById(R.id.main_redialog);
-			//
-			//
-			// ObjectAnimator revealAnimator = ObjectAnimator.ofFloat( // 缩放X
-			// // 轴的
-			// relocals, "scaleX", 0, (float)2.3);
-			// ObjectAnimator revealAnimator1 = ObjectAnimator.ofFloat(// 缩放Y
-			// // 轴的
-			// relocals, "scaleY", 0, (float)2.3);
-			// AnimatorSet set = new AnimatorSet();
-			// set.setDuration(500);// 设置播放时间
-			// set.setInterpolator(new CycleInterpolator(5));// 设置播放模式，这里是平常模式
-			// set.playTogether(revealAnimator, revealAnimator1);// 设置一起播放
-			// set.start();
-			//
-			// topaly.setOnClickListener(new OnClickListener() {
-			//
-			// @Override
-			// public void onClick(View arg0) {
-			//
-			// Intent intent = new Intent(TabHostActivity.this,
-			// ChooseMusic.class);
-			// startActivity(intent);
-			// overridePendingTransition(R.anim.push_left_in,
-			// R.anim.push_left_out);
-			// }
-			// });
-			//
-			// tolocal.setOnClickListener(new OnClickListener() {
-			//
-			// @Override
-			// public void onClick(View arg0) {
-			//
-			// Intent intent = new Intent(TabHostActivity.this,
-			// LocalVideoActivity.class);
-			// startActivity(intent);
-			// overridePendingTransition(R.anim.push_left_in,
-			// R.anim.push_left_out);
-			// }
-			// });
 
 			break;
 
@@ -663,7 +582,6 @@ public class TabHostActivity extends Activity implements OnClickListener {
 
 			img0.setBackgroundResource(R.drawable.videolistbg);
 			img1.setBackgroundResource(R.drawable.rankbg);
-			img2.setBackgroundResource(R.drawable.main_bar_btn);
 			img3.setBackgroundResource(R.drawable.other);
 			img4.setBackgroundResource(R.drawable.shinsetbg);
 
@@ -680,7 +598,6 @@ public class TabHostActivity extends Activity implements OnClickListener {
 
 			img0.setBackgroundResource(R.drawable.videolistbg);
 			img1.setBackgroundResource(R.drawable.rankbg);
-			img2.setBackgroundResource(R.drawable.main_bar_btn);
 			img3.setBackgroundResource(R.drawable.otherbg);
 			img4.setBackgroundResource(R.drawable.shinset);
 

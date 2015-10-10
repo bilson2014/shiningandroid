@@ -2,26 +2,24 @@
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
-        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in
-            backward-compatibility can go here.
+            backward-compatibility can go here.
         -->
     </style>
-    
-       <style name="mystyle" parent="android:Animation">
+
+    <style name="mystyle" parent="android:Animation">
         <item name="@android:windowEnterAnimation">@anim/dialog_enter</item>
         <item name="@android:windowExitAnimation">@anim/dialog_exit</item>
-                <item name="android:windowFrame">@null</item>
+        <item name="android:windowFrame">@null</item>
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
     </style>
-    
-    
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
@@ -29,6 +27,12 @@
         <item name="android:screenOrientation">portrait</item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    <!-- 引导页. -->
+    <style name="Theme.BackgroundTranslucent" parent="@android:Theme.Translucent">
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
     <!-- 设置listview的一些通用属性 -->
     <style name="ur_common_list_style">
         <item name="android:cacheColorHint">@android:color/transparent</item>
@@ -55,9 +59,9 @@
         <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
         <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
         <item name="android:windowBackground">@color/translut</item>
- <!-- 背景透明 -->
+        <!-- 背景透明 -->
         <item name="android:backgroundDimEnabled">false</item>
- <!-- 模糊 -->
+        <!-- 模糊 -->
     </style>
 
     <style name="selectorDialog" parent="@android:style/Theme.Dialog">
@@ -157,7 +161,7 @@
     <!--
     <style name="horizontal_slide2" parent="android:style/Theme.Holo.Light.NoActionBar">
         <item name="android:windowAnimationStyle">@style/AnimFade2</item>
-    </style>
+    </style>
     -->
 
     <style name="MyDialogStyle">
@@ -243,15 +247,15 @@
 
     <style name="my_dialog" parent="android:Theme.Dialog">
         <item name="android:windowFrame">@null</item>
- <!-- 边框 -->
+        <!-- 边框 -->
         <item name="android:windowIsFloating">true</item>
- <!-- 是否浮现在activity之上 -->
+        <!-- 是否浮现在activity之上 -->
         <item name="android:windowIsTranslucent">false</item>
- <!-- 半透明 -->
+        <!-- 半透明 -->
         <item name="android:windowNoTitle">true</item>
- <!-- 无标题 -->
+        <!-- 无标题 -->
         <item name="android:backgroundDimEnabled">false</item>
- <!-- 模糊 -->
+        <!-- 模糊 -->
     </style>
 
     <!-- 模仿dialog的遮罩层属性 -->
@@ -262,14 +266,13 @@
         <item name="android:windowBackground">@null</item>
         <item name="android:backgroundDimEnabled">true</item>
     </style>
-    
-     <!-- bar color -->
-<!--      
+
+    <!-- bar color -->
+    <!--
     <style name="TransparentTheme" parent="@android:style/Theme.Holo.NoActionBar">
         <item name="android:windowTranslucentStatus">true</item>
        
-    </style> -->
-
-
+    </style>
+    -->
 
 </resources>

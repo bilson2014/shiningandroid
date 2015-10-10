@@ -37,18 +37,15 @@ public class EveryDayActivityV2 extends MintsBaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.new_everyday);
 		initTitleBar();
-		this.pushFragmentToBackStack(meirixianFragement.class,
-				null);
+		this.pushFragmentToBackStack(meirixianFragement.class, null);
 
 	}
-	
-
 
 	void initTitleBar() {
 		View title = findViewById(R.id.every_bar);
 		ImageView barimg = (ImageView) title.findViewById(R.id.bar_img);
 		TextView bartxt = (TextView) title.findViewById(R.id.bar_text);
-		barimg.setBackgroundResource(R.drawable.everyday);
+
 		bartxt.setText("每日鲜");
 		ImageView barbot = (ImageView) title.findViewById(R.id.bar_set);
 		barbot.setVisibility(View.VISIBLE);

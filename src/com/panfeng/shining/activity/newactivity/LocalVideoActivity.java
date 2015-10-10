@@ -70,20 +70,19 @@ public class LocalVideoActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.local_main);
 
-//		String[] local = new File(LocalVideoPath).list();
-//		String[] mei = new File(MeiPaiVideoPath).list();
+		// String[] local = new File(LocalVideoPath).list();
+		// String[] mei = new File(MeiPaiVideoPath).list();
 
-//		fileList = Arrays.asList(local);
-//		meipaiList = Arrays.asList(mei);
+		// fileList = Arrays.asList(local);
+		// meipaiList = Arrays.asList(mei);
 
 		list = (GridView) findViewById(R.id.locallist);
 		initTitleBar();
 		DIY.clear();
 
-		
 		doSearch(DCIMPath);
-//		getLocal();
-//		getMeiPai();
+		// getLocal();
+		// getMeiPai();
 
 		localAdapter = new LocalAdapter(LocalVideoActivity.this, DIY);
 		list.setAdapter(localAdapter);
@@ -95,7 +94,6 @@ public class LocalVideoActivity extends Activity {
 					int position, long id) {
 
 				String path = DIY.get(position).getVideoPath();
-
 				Intent intent = new Intent();
 				intent.putExtra("url", path);
 				intent.setClass(ctx, ShowLocalVideo.class);
@@ -103,17 +101,15 @@ public class LocalVideoActivity extends Activity {
 
 			}
 		});
-		
+
 	}
-	
-	
 
 	void initTitleBar() {
 		View title = findViewById(R.id.locallistbar);
 
 		ImageView barimg = (ImageView) title.findViewById(R.id.bar_img);
 		TextView bartxt = (TextView) title.findViewById(R.id.bar_text);
-	//	bartxt.setText(title_text[keySelectedPosition]);
+		// bartxt.setText(title_text[keySelectedPosition]);
 
 		bartxt.setOnClickListener(new OnClickListener() {
 
@@ -156,18 +152,18 @@ public class LocalVideoActivity extends Activity {
 							String paths = f.getAbsolutePath();
 							MediaMetadataRetriever media = new MediaMetadataRetriever();
 							media.setDataSource(paths);
-                            Bitmap bitmap = media.getFrameAtTime();
-                            
-                            if(bitmap!=null){
-                            
-							diyLocalMap diy = new diyLocalMap();
-							diy.setName(name);
-							diy.setVideoPath(paths);
-							// diy.setPath(getVideoThumbnail(ctx, path));
-							diy.setPath(bitmap);
-							DIY.add(diy);
-                            }
-							
+							Bitmap bitmap = media.getFrameAtTime();
+
+							if (bitmap != null) {
+
+								diyLocalMap diy = new diyLocalMap();
+								diy.setName(name);
+								diy.setVideoPath(paths);
+								// diy.setPath(getVideoThumbnail(ctx, path));
+								diy.setPath(bitmap);
+								DIY.add(diy);
+							}
+
 						}
 					}
 				}

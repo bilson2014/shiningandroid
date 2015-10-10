@@ -53,8 +53,6 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 	private static int userCountBase = 80000;
 	private static final String TAG = "lutao";
 	private Context ctx = S2ndMainActivity.this;
-	
-	
 
 	private DisplayImageOptions options = new DisplayImageOptions.Builder()
 			.bitmapConfig(Bitmap.Config.RGB_565)
@@ -78,16 +76,13 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 	private BroadcastReceiver receiver;
 	private ImageView hot_dot;
 
-	UserInfoEntity uc ;
+	UserInfoEntity uc;
 	mHander hander = new mHander();
 
-	
-	
-	protected void onSaveInstanceState(){
+	protected void onSaveInstanceState() {
 		super.onSaveInstanceState(null);
-		
+
 	}
-	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -96,62 +91,14 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 		setContentView(R.layout.s2nd_main_layout);
 		initUI();
 		initTitleBar();
-		
-		
-	
+
 		try {
-			
-			uc =  UserControl.getUserInfo();
-			
-		
+
+			uc = UserControl.getUserInfo();
+
 		} catch (Exception e) {
-			
+
 		}
-		
-		
-		
-	//	FVMetaData.getContactNameFromPhoneBook(this,"18801376524");
-		
-		
-
-	
-		
-		
-		
-	//	initBottomBar();
-
-//		if (TyuPreferenceManager.isFirstOpen("newPlayer")) {
-//
-//			LayoutInflater mLayoutInflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
-//			// 自定义布局
-//			ViewGroup dlgView = (ViewGroup) mLayoutInflater.inflate(
-//					R.layout.needlook_layout, null);
-//			final Dialog dialog = new Dialog(this, R.style.selectorDialog);
-//
-//			dialog.setCanceledOnTouchOutside(false);
-//			dialog.setContentView(dlgView);
-//			dialog.show();
-//
-//			ImageView my_shinning = (ImageView) dlgView
-//					.findViewById(R.id.need_img);
-//			my_shinning.setOnClickListener(new OnClickListener() {
-//
-//				@Override
-//				public void onClick(View v) {
-//					// TODO Auto-generated method stub
-//					dialog.dismiss();
-//
-//					Intent intent = new Intent(S2ndMainActivity.this,
-//							S2ndShinningStoreActivity.class);
-//
-//					startActivity(intent);
-//				
-//				}
-//			});
-//
-//		}
-
-		
 
 		// 闪铃好友更新检查
 		receiver = new BroadcastReceiver() {
@@ -166,19 +113,16 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 		TyuShinningFriendSubService.regReceiver(this, receiver);
 		TyuTools.checkNewVersion(this);
 	}
-	
-	
-	
+
 	void initTitleBar() {
 		View title = findViewById(R.id.newlistbar);
-	
+
 		ImageView barimg = (ImageView) title.findViewById(R.id.bar_img);
 		ImageView toset = (ImageView) title.findViewById(R.id.bar_set);
 		toset.setVisibility(View.VISIBLE);
-		barimg.setBackgroundResource(R.drawable.tosetlayout);
 		TextView bartxt = (TextView) title.findViewById(R.id.bar_text);
 		bartxt.setText("闪星人");
-		
+
 		toset.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -187,16 +131,8 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 				launchActivity(s2ndSystemSettingActivity.class);
 			}
 		});
-		
-	
-		
-		
-		
+
 	}
-	
-	
-	
-	
 
 	void stopUserInfoTask() {
 		mUserInfoHandler.removeMessages(0);
@@ -227,7 +163,7 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 		new Thread() {
 			@Override
 			public void run() {
-				if (uc!=null&&!UserControl.isLogin()) {
+				if (uc != null && !UserControl.isLogin()) {
 					// 显示编号
 					int id = UserControl.getUserInfo().getUserId();
 					String txt = "";
@@ -343,46 +279,41 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 		myShing.layoutAfIcon.setBackgroundResource(R.drawable.myshinicon);
 		myShing.content.setOnClickListener(new OnClickListener() {
 
-			
 			@Override
 			public void onClick(View v) {
-				
-//				   SharedPreferences	preference = ctx.getSharedPreferences("configs",
-//							Context.MODE_PRIVATE);
-//				int	isrInteger = preference.getInt("isSet", 0);
-				
-			    DBAdapter	db = new DBAdapter(ctx);
+
+				// SharedPreferences preference =
+				// ctx.getSharedPreferences("configs",
+				// Context.MODE_PRIVATE);
+				// int isrInteger = preference.getInt("isSet", 0);
+
+				DBAdapter db = new DBAdapter(ctx);
 				db.open();
-				
-				Cursor c=db.getMyVideo();
-				
-				if(c.moveToFirst()&&c.getInt(1)==1){
-					
+
+				Cursor c = db.getMyVideo();
+
+				if (c.moveToFirst() && c.getInt(1) == 1) {
 
 					launchActivity(ShowMyMediaActivity.class);
-					
-				}
-				
-				else{
-					 Toast.makeText(ctx, "您还没有设置视频", Toast.LENGTH_LONG).show();
-					
-				}
-				
-				db.close();
-				
-				
-					
-//				if(isrInteger == 0){
-//				
-//				 Toast.makeText(ctx, "您还没有设置视频", Toast.LENGTH_LONG).show();
-//					
-//					
-//				}
-//				else{
-//					launchActivity(ShowMyMediaActivity.class);
-//				}
 
-			
+				}
+
+				else {
+					Toast.makeText(ctx, "您还没有设置视频", Toast.LENGTH_LONG).show();
+
+				}
+
+				db.close();
+
+				// if(isrInteger == 0){
+				//
+				// Toast.makeText(ctx, "您还没有设置视频", Toast.LENGTH_LONG).show();
+				//
+				//
+				// }
+				// else{
+				// launchActivity(ShowMyMediaActivity.class);
+				// }
 
 			}
 		});
@@ -395,9 +326,9 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 
 			@Override
 			public void onClick(View v) {
-			//	launchActivity(FindMyMediaAllVideoActivity.class);
+				// launchActivity(FindMyMediaAllVideoActivity.class);
 				launchActivity(FindMyMediaAllVideoActivity.class);
-			//	launchActivity(LocalVideoActivity.class);
+				// launchActivity(LocalVideoActivity.class);
 
 			}
 		});
@@ -426,7 +357,6 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 			public void onClick(View v) {
 
 				launchActivity(S2ndShiningAnswer.class);
-				
 
 			}
 		});
@@ -440,45 +370,43 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 
-				
-				if(uc!=null){
-				
-				String name = UserControl.getUserInfo().getUserName();
-				TelephonyManager mTelephonyMgr = (TelephonyManager) ctx
-						.getSystemService(Context.TELEPHONY_SERVICE);
-				String imei = mTelephonyMgr.getDeviceId();
-				if (name == null) {
+				if (uc != null) {
 
-					Toast.makeText(ctx, "请您先注册闪铃用户~", Toast.LENGTH_LONG).show();
-				}
+					String name = UserControl.getUserInfo().getUserName();
+					TelephonyManager mTelephonyMgr = (TelephonyManager) ctx
+							.getSystemService(Context.TELEPHONY_SERVICE);
+					String imei = mTelephonyMgr.getDeviceId();
+					if (name == null) {
 
-				else {
-
-					if (imei == null || imei.length() == 0) {
-						Toast.makeText(ctx, "您的设备不支持反馈 请加QQ群49038471",
-								Toast.LENGTH_LONG).show();
+						Toast.makeText(ctx, "请您先注册闪铃用户~", Toast.LENGTH_LONG)
+								.show();
 					}
 
 					else {
 
-						// feedback.infoiv.setVisibility(View.GONE);
-						startActivity(new Intent(getActivity(),LoginActivity.class));
-						
+						if (imei == null || imei.length() == 0) {
+							Toast.makeText(ctx, "您的设备不支持反馈 请加QQ群49038471",
+									Toast.LENGTH_LONG).show();
 						}
-				
-			}
-			}
-				else{
-					
-					Toast.makeText(ctx, "用户信息异常 请尝试重新登录",
-							Toast.LENGTH_LONG).show();
+
+						else {
+
+							// feedback.infoiv.setVisibility(View.GONE);
+							startActivity(new Intent(getActivity(),
+									LoginActivity.class));
+
+						}
+
+					}
+				} else {
+
+					Toast.makeText(ctx, "用户信息异常 请尝试重新登录", Toast.LENGTH_LONG)
+							.show();
 				}
 			}
-			
-		
+
 		});
 
-		
 		SettingItemType1 miui = new SettingItemType1(R.id.item1_4_info);
 		miui.layout.setText("小米活动--提建议中大奖！");
 		miui.layoutIcon.setBackgroundResource(R.drawable.miui);
@@ -488,13 +416,11 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 
-				
-				startActivity(new Intent(getActivity(),WebViewActivity.class));
-				
+				startActivity(new Intent(getActivity(), WebViewActivity.class));
 
 			}
 		});
-		
+
 		SettingItemType1 video = new SettingItemType1(R.id.item1_5_info);
 		video.layout.setText("video");
 		video.layoutIcon.setBackgroundResource(R.drawable.miui);
@@ -504,31 +430,29 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 
-				
-				startActivity(new Intent(getActivity(),WebViewActivity.class));
-				
+				startActivity(new Intent(getActivity(), WebViewActivity.class));
 
 			}
 		});
-		
-		
-		
-		
-		
-		
+
 	}
 
 	@Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
 		super.onResume();
-		
-		if(uc!=null){
-		refreshUserState();
-		// 启动循环任务
-		mUserInfoHandler.removeMessages(0);
-		state_step = 0;
-		doUserInfoTask();
+
+		try {
+
+			if (uc != null) {
+				refreshUserState();
+				// 启动循环任务
+				mUserInfoHandler.removeMessages(0);
+				state_step = 0;
+				doUserInfoTask();
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
 	}
 
@@ -556,12 +480,12 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 			}
 
 			String user_img_path = UserControl.getUserInfo().getUserImage();
-			Log.i("dirlist", "user_img_path"+user_img_path);
+			Log.i("dirlist", "user_img_path" + user_img_path);
 			if (!TextUtils.isEmpty(user_img_path)) {
-//				imageLoader.displayImage(
-//						Scheme.FILE.wrap(user_img_path), userIcon,
-//						options);
-				
+				// imageLoader.displayImage(
+				// Scheme.FILE.wrap(user_img_path), userIcon,
+				// options);
+
 				imageLoader.displayImage(user_img_path, userIcon, options);
 			}
 
@@ -571,11 +495,10 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 
 			@Override
 			public void onClick(View v) {
-				
-				
+
 				Log.i("slwslt", UserControl.getUserInfo().toString());
 
-				// TODO Auto-generated  登录
+				// TODO Auto-generated 登录
 				if (!UserControl.isLogin()) {
 					hander.sendEmptyMessage(2);
 
@@ -605,8 +528,8 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 
 			break;
 		case R.id.my_shinning:
-//			S2ndShinningFriendDetailActivity.showMyShinning = true;
-//			launchActivity(S2ndShinningFriendDetailActivity.class);
+			// S2ndShinningFriendDetailActivity.showMyShinning = true;
+			// launchActivity(S2ndShinningFriendDetailActivity.class);
 			break;
 
 		case R.id.system_setting:
@@ -626,57 +549,6 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 		startActivity(new Intent(getAvtivity(), aClass));
 		overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 	}
-//
-//	void initBottomBar() {
-//
-//		View title = findViewById(R.id.item2_1);
-//		ImageView back = (ImageView) title.findViewById(R.id.tocamera);
-//		ImageView setting = (ImageView) title.findViewById(R.id.toseting);
-//		ImageView videolist = (ImageView) title.findViewById(R.id.tovideolist);
-//
-//		back.setOnClickListener(new OnClickListener() {
-//
-//			@Override
-//			public void onClick(View v) {
-//				// TODO Auto-generated method stub
-//
-//				Intent intent = new Intent();
-//				intent.setClass(ctx, ChooseMusic.class);
-//				startActivity(intent);
-//				finish();
-//				
-//
-//			}
-//		});
-//
-//		setting.setOnClickListener(new OnClickListener() {
-//
-//			@Override
-//			public void onClick(View v) {
-//				// TODO Auto-generated method stub
-//
-//				// Intent intent = new Intent();
-//				// intent.setClass(ctx, S2ndMainActivity.class);
-//				// startActivity(intent);
-//
-//			}
-//		});
-//
-//		videolist.setOnClickListener(new OnClickListener() {
-//
-//			@Override
-//			public void onClick(View v) {
-//				// TODO Auto-generated method stub
-//
-//				Intent intent = new Intent();
-//				intent.setClass(ctx, S2ndShinningStoreActivity.class);
-//				startActivity(intent);
-//				finish();
-//
-//			}
-//		});
-//
-//	}
 
 	class SettingItemType1 {
 		public SettingItemType1(int aId) {
@@ -692,40 +564,39 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 		public ImageView layoutAfIcon;
 
 	}
-	
-	
+
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
 
-//			if(secondDel())
-//				Toast.makeText(S2ndMainActivity.this, "再按一次退出",Toast.LENGTH_SHORT).show();
-//				
-//			
-//			
+			// if(secondDel())
+			// Toast.makeText(S2ndMainActivity.this,
+			// "再按一次退出",Toast.LENGTH_SHORT).show();
+			//
+			//
+			//
 			return false;
 		}
 		return super.onKeyDown(keyCode, event);
 	}
-	
-	
-	
+
 	private long clickTime = 0;
+
 	// 双击重置
 	public boolean secondDel() {
 
 		if ((System.currentTimeMillis() - clickTime) > 2000) {
 			clickTime = System.currentTimeMillis();
-			
+
 			return true;
 		} else {
-			
+
 			finish();
 			return false;
 		}
 	}
-	
+
 	class mHander extends Handler {
 
 		boolean loadMore = true;
@@ -733,41 +604,37 @@ public class S2ndMainActivity extends Activity implements OnClickListener {
 		@Override
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
-			
-			if(msg.what==1){
-			Toast.makeText(ctx, "用户信息异常", Toast.LENGTH_SHORT).show();
+
+			if (msg.what == 1) {
+				Toast.makeText(ctx, "用户信息异常", Toast.LENGTH_SHORT).show();
 			}
-			
-			else if (msg.what==2){
-				TyuTools.showUserVerify(getAvtivity(), "登录验证",
-						new Runnable() {
 
-							@Override
-							public void run() {
-								// TODO Auto-generated method stub
-								
-								if(uc!=null){
-								
-								refreshUserState();
-								startActivity(new Intent(getAvtivity(),
-										TyuUserInfoActivity.class));
-								}
-								
-								else{
-									hander.sendEmptyMessage(1);
-									
-								
-									
-								}
+			else if (msg.what == 2) {
+				TyuTools.showUserVerify(getAvtivity(), "登录验证", new Runnable() {
 
-							}
-						});
-				
+					@Override
+					public void run() {
+						// TODO Auto-generated method stub
+
+						if (uc != null) {
+
+							refreshUserState();
+							startActivity(new Intent(getAvtivity(),
+									TyuUserInfoActivity.class));
+						}
+
+						else {
+							hander.sendEmptyMessage(1);
+
+						}
+
+					}
+				});
+
 			}
 
 		}
 
 	}
-	
 
 }

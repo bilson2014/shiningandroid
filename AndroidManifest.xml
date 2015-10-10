@@ -154,6 +154,7 @@
             android:name="com.panfeng.shining.activity.SplashActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
+            android:theme="@style/Theme.BackgroundTranslucent"
             android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -161,9 +162,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.panfeng.shining.activity.s2nd.ShowMediaActivity" 
-                   android:theme="@android:style/Theme.NoTitleBar.Fullscreen"           
-            >
+        <activity
+            android:name="com.panfeng.shining.activity.s2nd.ShowMediaActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
         <activity android:name="com.panfeng.shining.activity.s2nd.TabHostActivity" >
         </activity>
@@ -256,18 +257,6 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.panfeng.shining.activity.s2nd.S2ndShinningStoreActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
-            android:name="com.panfeng.shining.activity.s2nd.S2ndShinningFriendActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity
             android:name="com.panfeng.shining.activity.s2nd.s2ndSystemSettingActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:label="@string/app_name"
@@ -293,12 +282,6 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/activity_theme_transparent" >
-        </activity>
-        <activity
-            android:name="com.panfeng.shining.activity.s2nd.S2ndShinningFriendDetailActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:label="@string/app_name"
-            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.panfeng.shining.activity.s2nd.S2ndShiningAnswer"
@@ -341,8 +324,8 @@
         </activity>
         <activity
             android:name="com.panfeng.shining.activity.s2nd.ShowMyMediaActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
         <activity
             android:name="com.panfeng.shining.activity.s2nd.FindMyMediaProductionActivity"
@@ -353,10 +336,6 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.panfeng.shining.activity.newactivity.EveryDayActivity"
-            android:screenOrientation="portrait" >
-        </activity>
-           <activity
             android:name="com.panfeng.shining.activity.newactivity.EveryDayActivityV2"
             android:screenOrientation="portrait" >
         </activity>
@@ -365,10 +344,6 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.panfeng.shining.activity.newactivity.MoreMeidaActivity"
-            android:screenOrientation="portrait" >
-        </activity>
-          <activity
             android:name="com.panfeng.shining.activity.newactivity.MoreMeidaActivityV2"
             android:screenOrientation="portrait" >
         </activity>
@@ -381,10 +356,6 @@
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.panfeng.shining.activity.newactivity.FestailActivity"
-            android:screenOrientation="portrait" >
-        </activity>
-             <activity
             android:name="com.panfeng.shining.activity.newactivity.FestailActivityV2"
             android:screenOrientation="portrait" >
         </activity>
@@ -476,8 +447,8 @@
         </activity>
         <activity
             android:name="com.panfeng.shining.activity.newactivity.ShowLocalVideo"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         </activity>
 
         <!-- 开机自启动服务 -->
@@ -582,14 +553,14 @@
             android:screenOrientation="portrait" />
 
         <!-- MTD key Channel -->
-      
+        <!--
         <meta-data
             android:name="TA_APPKEY"
-            android:value="A6BMA4N18MYV" /> 
+            android:value="A6BMA4N18MYV" />
         <meta-data
             android:name="InstallChannel"
-            android:value="leshangdian" /> 
-       
+            android:value="leshangdian" />
+        -->
 
 
         <!-- 环信 key Channel -->

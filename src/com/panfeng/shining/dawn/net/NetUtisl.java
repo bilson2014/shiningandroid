@@ -97,7 +97,7 @@ public final class NetUtisl implements getResouceInterface {
 	}
 	
 	public void getPaiHang(final RequestHandler<JsonData> requestHandler) {
-		String url = TyuDefine.HOST + "smc/get_media_base_new?page_id=1&page_size=30";
+		String url = TyuDefine.HOST + "smc/get_media_base_new?page_id=1&page_size=30&weight=1";
 		sendrequest(requestHandler, url, null);
 	}
 	

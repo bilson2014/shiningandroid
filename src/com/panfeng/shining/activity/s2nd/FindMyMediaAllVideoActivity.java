@@ -86,15 +86,23 @@ public class FindMyMediaAllVideoActivity extends Activity {
 
 		initTitleBar();
 		list = (GridView) findViewById(R.id.findlist);
-		home = new File(mediaPath).listFiles();
-		homes = new File(mediaPath).list();
+		
+		try {
+			
+			home = new File(mediaPath).listFiles();
+			homes = new File(mediaPath).list();
 
-		if (home.length < 1) {
+			if (home.length < 1) {
 
-		} else {
+			} else {
 
-			updateInfo();
+				updateInfo();
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+		
 
 		list.setOnItemClickListener(new OnItemClickListener() {
 			@Override

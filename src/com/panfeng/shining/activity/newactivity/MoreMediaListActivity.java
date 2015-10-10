@@ -45,7 +45,7 @@ public class MoreMediaListActivity extends Activity {
 	public static List<TypeEntity> typeList = new ArrayList<TypeEntity>();
 	JSONArray jsonarray;
 	String jsonString;
-	
+
 	MoreListlAdapter mlAdapter;
 	mHander m = new mHander();
 
@@ -71,12 +71,11 @@ public class MoreMediaListActivity extends Activity {
 		setContentView(R.layout.moremedialist);
 		initTitleBar();
 		init();
-		Log.i("showDia","init");
+		Log.i("showDia", "init");
 		updateMessage();
-		
+
 		mlAdapter = new MoreListlAdapter(MoreMediaListActivity.this, typeList);
 		list.setAdapter(mlAdapter);
-
 
 		list.setOnItemClickListener(new OnItemClickListener() {
 
@@ -84,15 +83,11 @@ public class MoreMediaListActivity extends Activity {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
-				
-				
-				
-			
 				Intent intent = new Intent(MoreMediaListActivity.this,
 						MoreMeidaActivityV2.class);
-				Log.e("xyz", typeList.get(position).getState()+"123123");
+				Log.e("xyz", typeList.get(position).getState() + "123123");
 				intent.putExtra("obj", typeList.get(position));
-				
+
 				startActivity(intent);
 
 				Properties prop = new Properties();
@@ -113,7 +108,7 @@ public class MoreMediaListActivity extends Activity {
 
 				try {
 					jsonString = TyuShinningData.getInstance().getTypeList();
-					Log.i("showDia","jsonString"+ jsonString);
+					Log.i("showDia", "jsonString" + jsonString);
 					jsonarray = new JSONArray(jsonString);
 
 					for (int i = 0; i < jsonarray.length(); i++) {
@@ -122,26 +117,24 @@ public class MoreMediaListActivity extends Activity {
 								"ms_name");
 						String content = jsonarray.getJSONObject(i).getString(
 								"ms_remark");
-						
-					    int state = jsonarray.getJSONObject(i).getInt("ms_state");
-						
 
-					    if(state==2){
-						te.setTypeSmallImage(jsonarray.getJSONObject(i).getString(
-								"ms_lueimageurl"));
-						te.setTypeBigImage(jsonarray.getJSONObject(i).getString(
-								"ms_changimageurl"));
-						te.setTypeName(type);
-						te.setTypeContents(content);
-						te.setState(state+"");
-						typeList.add(te);
-					    }
+						int state = jsonarray.getJSONObject(i).getInt(
+								"ms_state");
 
-					    m.sendEmptyMessage(123);
+						if (state == 2) {
+							te.setTypeSmallImage(jsonarray.getJSONObject(i)
+									.getString("ms_lueimageurl"));
+							te.setTypeBigImage(jsonarray.getJSONObject(i)
+									.getString("ms_changimageurl"));
+							te.setTypeName(type);
+							te.setTypeContents(content);
+							te.setState(state + "");
+							typeList.add(te);
+
+						}
+
 					}
-					
-					
-
+					m.sendEmptyMessage(123);
 
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
@@ -153,23 +146,18 @@ public class MoreMediaListActivity extends Activity {
 		}).start();
 
 	}
-	
-
 
 	private void init() {
-       typeList.clear();
+		typeList.clear();
 		list = (ListView) findViewById(R.id.moremedia_list);
 
 	}
-	
-	
 
 	void initTitleBar() {
 		View title = findViewById(R.id.newbar);
 		ImageView barimg = (ImageView) title.findViewById(R.id.bar_img);
 		TextView bartxt = (TextView) title.findViewById(R.id.bar_text);
 
-		barimg.setBackgroundResource(R.drawable.better);
 		bartxt.setText("精选集");
 		ImageView barbot = (ImageView) title.findViewById(R.id.bar_set);
 
@@ -189,17 +177,15 @@ public class MoreMediaListActivity extends Activity {
 		});
 
 	}
-	
-	
+
 	class mHander extends Handler {
 
 		@Override
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
 			if (msg.what == 123) {
-			
+
 				mlAdapter.notifyDataSetChanged();
-				
 
 			}
 		}

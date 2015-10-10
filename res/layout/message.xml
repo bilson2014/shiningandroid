@@ -11,7 +11,7 @@
         android:background="@drawable/info_slw" >
     </ImageView>
     
-      <com.panfeng.camera.surfaceview.SurfaceAnimationViewTabHost
+      <SurfaceView
         android:id="@+id/info_cartoon"
         android:layout_width="@dimen/view_width"
         android:layout_height="@dimen/view_height"
@@ -28,7 +28,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
-        android:paddingBottom="20dp" >
+        android:paddingBottom="@dimen/view_bottom" >
 
         <ImageView
             android:id="@+id/info_set"

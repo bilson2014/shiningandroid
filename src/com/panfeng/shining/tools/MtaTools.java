@@ -39,6 +39,28 @@ public class MtaTools {
 		StatService.trackCustomKVEvent(ctx, "set_video", prop);
 
 	}
+	
+
+	/*
+	 * 本地视频设置
+	 */
+	public static void MtaLocalVideo(Context ctx) {
+		StatService.trackCustomEvent(ctx, "localVideo_check", "");
+
+	}
+	
+	
+	
+	
+	
+	/*
+	 * 引导设置
+	 */
+	public static void MtaAutoSet(Context ctx) {
+		
+		StatService.trackCustomEvent(ctx, "auto_btn", "");
+
+	}
 
 	/**
 	 * 选择音乐

@@ -16,6 +16,7 @@
        
     <dimen name="view_height">350dp</dimen>
     <dimen name="view_width">250dp</dimen>
+    <dimen name="view_bottom">20dp</dimen>
     
          <!--分类  -->
        

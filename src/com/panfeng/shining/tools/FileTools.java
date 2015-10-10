@@ -92,14 +92,22 @@ public class FileTools {
 
 		int high;
 		int width;
-		MediaMetadataRetriever media = new MediaMetadataRetriever();
-		media.setDataSource(paths);
-		Bitmap bitmap = media.getFrameAtTime();
 
-		high = bitmap.getHeight();
-		width = bitmap.getWidth();
-		bitmap.recycle();
-		bitmap = null;
+		try {
+
+			MediaMetadataRetriever media = new MediaMetadataRetriever();
+			media.setDataSource(paths);
+			Bitmap bitmap = media.getFrameAtTime();
+
+			high = bitmap.getHeight();
+			width = bitmap.getWidth();
+			bitmap.recycle();
+			bitmap = null;
+			return new Pair<Integer, Integer>(high, width);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
 		// if(high>width){
 		// return new Pair<Integer, Integer>(high, width);
@@ -109,8 +117,8 @@ public class FileTools {
 		//
 		// return new Pair<Integer, Integer>(width, high);
 		// }
-
-		return new Pair<Integer, Integer>(high, width);
+		
+		return new Pair<Integer, Integer>(640, 480);
 
 	}
 
@@ -127,9 +135,10 @@ public class FileTools {
 
 		int ourVideo = (int) ((vHeight / vWidth) * 100); // 100
 		int secSize = (int) ((secHeight / secWidth) * 100);// 100
-		Log.i("TabHost", secHeight + "secHeight" + secWidth + "secWidth"+ vHeight + "height" + vWidth + "width" + ourVideo + "ourVideo");
+		Log.i("TabHost", secHeight + "secHeight" + secWidth + "secWidth"
+				+ vHeight + "height" + vWidth + "width" + ourVideo + "ourVideo");
 
-		Log.i("xyz", ourVideo+"ourVideo"+secSize+"secSize");
+		Log.i("xyz", ourVideo + "ourVideo" + secSize + "secSize");
 		// 如果取不到屏幕或者视频
 		if ((secWidth < 1 && secHeight < 1) || (vHeight < 1 && vWidth < 1)) {
 
@@ -149,9 +158,7 @@ public class FileTools {
 		}
 		int bizhi = secSize - ourVideo;
 		// 允许拉伸范围
-		
-		
-		
+
 		if (Math.abs(bizhi) <= needSize) {
 			return new Pair<Double, Double>(secHeight, secWidth);
 		}

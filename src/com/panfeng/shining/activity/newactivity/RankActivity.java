@@ -99,7 +99,6 @@ public class RankActivity extends Activity {
 		ImageView barimg = (ImageView) title.findViewById(R.id.bar_img);
 		TextView bartxt = (TextView) title.findViewById(R.id.bar_text);
 
-		barimg.setBackgroundResource(R.drawable.rankimg);
 		bartxt.setText("排行榜");
 		ImageView barbot = (ImageView) title.findViewById(R.id.bar_set);
 
@@ -141,9 +140,6 @@ public class RankActivity extends Activity {
 			if (failData.getErrorType() == 2) {
 				Toast.makeText(context, "网络异常", Toast.LENGTH_SHORT).show();
 				neterror.setVisibility(View.VISIBLE);
-			} else {
-				
-
 			}
 		}
 	}
@@ -154,7 +150,6 @@ public class RankActivity extends Activity {
 		public void onRequestFinish(JsonData data) {
 			// json 数据转换
 			List<VideoEntityLu> list = data.asList(VideoEntityLu.jsonConverter);
-			Log.e("xyz", "获取数据大小：" + list.size() + "");
 			mTalks.addAll(list);
 			m.sendEmptyMessage(123);
 		}

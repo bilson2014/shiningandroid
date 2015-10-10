@@ -71,7 +71,6 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_centerInParent="true"
-                android:background="@drawable/main_bar_btn"
                 android:scaleType="fitXY"
                 android:visibility="invisible" >
             </ImageView>

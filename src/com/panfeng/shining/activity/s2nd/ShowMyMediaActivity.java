@@ -56,11 +56,11 @@ public class ShowMyMediaActivity extends Activity implements OnClickListener {
 	ArrayList<View> itemViewList = new ArrayList<View>();
 
 	// 关键字基础数据
-	
+
 	protected void onStop() {
 		super.onStop();
 		TyuApp.needCreate = false;
-		
+
 	}
 
 	@Override
@@ -68,7 +68,8 @@ public class ShowMyMediaActivity extends Activity implements OnClickListener {
 		// TODO Auto-generated method stub
 		getWindow().addFlags(
 				WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
-						| WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
+						| WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON
+						| WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.s2nd_my_media_list_layout);
 
@@ -78,40 +79,32 @@ public class ShowMyMediaActivity extends Activity implements OnClickListener {
 		share.setVisibility(View.INVISIBLE);
 		set.setVisibility(View.INVISIBLE);
 
-		
-		
 		cameraPath = newPath;
-		
 
 		double secWidth = this.getWindowManager().getDefaultDisplay()
 				.getWidth();
 		double secHeight = this.getWindowManager().getDefaultDisplay()
 				.getHeight();
-		
-		
-		
-		
+
 		try {
-			
-	
-		FileTools ft = new FileTools();
 
-		double realHeight = ft.getRealSize(cameraPath, secWidth, secHeight).first;
-		double realWidth = ft.getRealSize(cameraPath, secWidth, secHeight).second;
+			FileTools ft = new FileTools();
 
-		LayoutParams lp = v.getLayoutParams();
-		lp.height = (int) realHeight;
-		lp.width = (int) realWidth;
-		v.setLayoutParams(lp);
+			double realHeight = ft.getRealSize(cameraPath, secWidth, secHeight).first;
+			double realWidth = ft.getRealSize(cameraPath, secWidth, secHeight).second;
 
-		initMediaPaly(new File(cameraPath));
+			LayoutParams lp = v.getLayoutParams();
+			lp.height = (int) realHeight;
+			lp.width = (int) realWidth;
+			v.setLayoutParams(lp);
+
+			initMediaPaly(new File(cameraPath));
 		} catch (Exception e) {
 			Toast.makeText(ctx, "视频准备中", Toast.LENGTH_LONG).show();
 		}
 
 	}
 
-	
 	private void toDel() {
 
 		LayoutInflater mLayout = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -126,9 +119,9 @@ public class ShowMyMediaActivity extends Activity implements OnClickListener {
 
 		ImageView sure = (ImageView) dlgv.findViewById(R.id.sure_setvideo);
 		TextView tesure = (TextView) dlgv.findViewById(R.id.set_true);
-		
+
 		tesure.setText("客官您确定吗？");
-	
+
 		ImageView back = (ImageView) dlgv.findViewById(R.id.sure_back);
 
 		sure.setOnClickListener(new OnClickListener() {
@@ -144,15 +137,11 @@ public class ShowMyMediaActivity extends Activity implements OnClickListener {
 				SharedPreferences.Editor editor = preference.edit();
 				editor.putInt("isSetMyVideo", 0);
 				editor.commit();
-				
-				
+
 				DBAdapter db = new DBAdapter(ctx);
 				db.open();
-				db.updateMyVideo(1,0);
+				db.updateMyVideo(1, 0);
 				db.close();
-				
-				
-				
 
 				finish();
 

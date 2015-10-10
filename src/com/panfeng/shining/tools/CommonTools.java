@@ -1,6 +1,7 @@
 package com.panfeng.shining.tools;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Method;
@@ -15,11 +16,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Build;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.SurfaceView;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -29,60 +32,54 @@ import android.widget.Toast;
 import com.panfeng.camera.surfaceview.SurfaceAnimationViewTabHost;
 import com.panfeng.shining.activity.s2nd.TabHostActivity;
 import com.panfeng.shining.interfaces.callBack;
+import com.panfeng.shining.receiver.AddVideoReceive;
 import com.panfeng.shinning.R;
 
-public class CommonTools  {
+public class CommonTools {
 
+	ImageView my_shinning_nomore;
+	ImageView my_shinning;
+	ImageView my_shinning_set;
+	ViewGroup dlgView;
+	SurfaceView sav;
+	int where;
+	String pathString = Environment.getExternalStorageDirectory()
+			.getAbsolutePath();
 
+	String holPath = pathString + File.separator + "com.panfeng.shinning"
+			+ File.separator + "baseVideo" + File.separator + "hol.mp4";
 
-	 ImageView my_shinning_nomore;
-	 ImageView my_shinning;
-	 ImageView my_shinning_set;
-	 ViewGroup dlgView;
-	 SurfaceAnimationViewTabHost sav; 
-	 int where;
-	 
-	 mHander hander = new mHander();
-	
-	
-	
-	
+	mHander hander = new mHander();
 
 	public static void showToast(Context ctx, String str) {
 
 		Toast.makeText(ctx, str, Toast.LENGTH_SHORT).show();
 
 	}
-	
-	
-	public  void checkButton(Context context){
-		
+
+	public void checkButton(Context context) {
+
 		LayoutInflater mLayoutInflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		
-		dlgView = (ViewGroup) mLayoutInflater.inflate(
-				R.layout.message, null);
-		
-		
-		 my_shinning_nomore = (ImageView) dlgView
-				.findViewById(R.id.info_nomore);
-		 my_shinning = (ImageView) dlgView
-				.findViewById(R.id.info_close);
-		 my_shinning_set = (ImageView) dlgView
-				.findViewById(R.id.info_set);
-		 
-		 my_shinning_nomore.setVisibility(View.VISIBLE);
-		 my_shinning.setVisibility(View.VISIBLE);
-		 my_shinning_set.setVisibility(View.VISIBLE);
-		
+
+		dlgView = (ViewGroup) mLayoutInflater.inflate(R.layout.message, null);
+
+		my_shinning_nomore = (ImageView) dlgView.findViewById(R.id.info_nomore);
+		my_shinning = (ImageView) dlgView.findViewById(R.id.info_close);
+		my_shinning_set = (ImageView) dlgView.findViewById(R.id.info_set);
+
+		my_shinning_nomore.setVisibility(View.VISIBLE);
+		my_shinning.setVisibility(View.VISIBLE);
+		my_shinning_set.setVisibility(View.VISIBLE);
+
 	}
 
 	// 引导动画
-	public  void showDialog(final Context context,int whereCome) {
+	public void showDialog(final Context context, int whereCome) {
 
 		List<Integer> list = new ArrayList<Integer>();
 		SharedPreferences preference;
-		
+
 		where = whereCome;
 
 		if (!getSystemProperty("ro.miui.ui.version.name").equals("")) {
@@ -104,8 +101,6 @@ public class CommonTools  {
 
 		}
 
-		
-
 		if (android.os.Build.MANUFACTURER.equals("HUAWEI")) {
 
 			preference = context.getSharedPreferences("configs",
@@ -116,8 +111,6 @@ public class CommonTools  {
 
 		}
 
-
-
 		// 自定义布局
 
 		preference = context.getSharedPreferences("configs",
@@ -126,185 +119,182 @@ public class CommonTools  {
 		final int checkMode = preference.getInt("isMIUI", 0);
 		final int checkMeiZu = preference.getInt("isMeiZu", 0);
 		final int checkHol = preference.getInt("isHol", 0);
-		
-		
+
 		LayoutInflater mLayoutInflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		
-		dlgView = (ViewGroup) mLayoutInflater.inflate(
-				R.layout.message, null);
-		
-		sav = (SurfaceAnimationViewTabHost)dlgView.findViewById(R.id.info_cartoon);
-		
-		 my_shinning_nomore = (ImageView) dlgView
-				.findViewById(R.id.info_nomore);
-		 my_shinning = (ImageView) dlgView
-				.findViewById(R.id.info_close);
-		 my_shinning_set = (ImageView) dlgView
-				.findViewById(R.id.info_set);
-		 
-//		 my_shinning_nomore.setVisibility(View.VISIBLE);
-//		 my_shinning.setVisibility(View.VISIBLE);
-//		 my_shinning_set.setVisibility(View.VISIBLE);
-		 
-		callBack cb=new callBack() {
-			
+
+		dlgView = (ViewGroup) mLayoutInflater.inflate(R.layout.message, null);
+
+		sav = (SurfaceView) dlgView.findViewById(R.id.info_cartoon);
+
+		my_shinning_nomore = (ImageView) dlgView.findViewById(R.id.info_nomore);
+		my_shinning = (ImageView) dlgView.findViewById(R.id.info_close);
+		my_shinning_set = (ImageView) dlgView.findViewById(R.id.info_set);
+
+		// my_shinning_nomore.setVisibility(View.VISIBLE);
+		// my_shinning.setVisibility(View.VISIBLE);
+		// my_shinning_set.setVisibility(View.VISIBLE);
+
+		callBack cb = new callBack() {
+
 			@Override
 			public void method() {
-				
+
 				hander.sendEmptyMessage(1);
-		
+
 			}
 		};
-		sav.setCallBack(cb);
-		
-		 
-		
+		// sav.setCallBack(cb);
 
-
+		MediaPlayerTools mp = new MediaPlayerTools();
 
 		if (checkMode == 1) {
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
-			list.add(R.drawable.lin0001);
 
-			list.add(R.drawable.lin0011);
-			list.add(R.drawable.lin0012);
-			list.add(R.drawable.lin0013);
-			list.add(R.drawable.lin0014);
-			list.add(R.drawable.lin0015);
-			list.add(R.drawable.lin0016);
-			list.add(R.drawable.lin0017);
-			list.add(R.drawable.lin0018);
-			list.add(R.drawable.lin0019);
-			list.add(R.drawable.lin0020);
-			list.add(R.drawable.lin0021);
-			list.add(R.drawable.lin0022);
-			list.add(R.drawable.lin0023);
-			list.add(R.drawable.lin0024);
-			list.add(R.drawable.lin0025);
+			File f = new File(holPath);
+			mp.initMediaPlayLead(f, sav, my_shinning, my_shinning_set,
+					my_shinning_nomore);
 
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-			list.add(R.drawable.lin0027);
-
-			list.add(R.drawable.lin0038);
-			list.add(R.drawable.lin0039);
-			list.add(R.drawable.lin0040);
-			list.add(R.drawable.lin0041);
-			list.add(R.drawable.lin0042);
-			list.add(R.drawable.lin0043);
-			list.add(R.drawable.lin0044);
-			list.add(R.drawable.lin0045);
-			list.add(R.drawable.lin0046);
-			list.add(R.drawable.lin0047);
-			list.add(R.drawable.lin0048);
-			list.add(R.drawable.lin0049);
-			list.add(R.drawable.lin0050);
-			list.add(R.drawable.lin0051);
-			list.add(R.drawable.lin0052);
-
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-			list.add(R.drawable.lin0054);
-
-			list.add(R.drawable.lin0065);
-			list.add(R.drawable.lin0066);
-			list.add(R.drawable.lin0067);
-			list.add(R.drawable.lin0068);
-			list.add(R.drawable.lin0069);
-			list.add(R.drawable.lin0070);
-			list.add(R.drawable.lin0071);
-			list.add(R.drawable.lin0072);
-			list.add(R.drawable.lin0073);
-			list.add(R.drawable.lin0074);
-			list.add(R.drawable.finish);
-			list.add(R.drawable.finish);
-			list.add(R.drawable.finish);
-			list.add(R.drawable.finish);
-			list.add(R.drawable.finish);
-
+			//
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.tips);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			// list.add(R.drawable.lin0001);
+			//
+			// list.add(R.drawable.lin0011);
+			// list.add(R.drawable.lin0012);
+			// list.add(R.drawable.lin0013);
+			// list.add(R.drawable.lin0014);
+			// list.add(R.drawable.lin0015);
+			// list.add(R.drawable.lin0016);
+			// list.add(R.drawable.lin0017);
+			// list.add(R.drawable.lin0018);
+			// list.add(R.drawable.lin0019);
+			// list.add(R.drawable.lin0020);
+			// list.add(R.drawable.lin0021);
+			// list.add(R.drawable.lin0022);
+			// list.add(R.drawable.lin0023);
+			// list.add(R.drawable.lin0024);
+			// list.add(R.drawable.lin0025);
+			//
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			// list.add(R.drawable.lin0027);
+			//
+			// list.add(R.drawable.lin0038);
+			// list.add(R.drawable.lin0039);
+			// list.add(R.drawable.lin0040);
+			// list.add(R.drawable.lin0041);
+			// list.add(R.drawable.lin0042);
+			// list.add(R.drawable.lin0043);
+			// list.add(R.drawable.lin0044);
+			// list.add(R.drawable.lin0045);
+			// list.add(R.drawable.lin0046);
+			// list.add(R.drawable.lin0047);
+			// list.add(R.drawable.lin0048);
+			// list.add(R.drawable.lin0049);
+			// list.add(R.drawable.lin0050);
+			// list.add(R.drawable.lin0051);
+			// list.add(R.drawable.lin0052);
+			//
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			// list.add(R.drawable.lin0054);
+			//
+			// list.add(R.drawable.lin0065);
+			// list.add(R.drawable.lin0066);
+			// list.add(R.drawable.lin0067);
+			// list.add(R.drawable.lin0068);
+			// list.add(R.drawable.lin0069);
+			// list.add(R.drawable.lin0070);
+			// list.add(R.drawable.lin0071);
+			// list.add(R.drawable.lin0072);
+			// list.add(R.drawable.lin0073);
+			// list.add(R.drawable.lin0074);
+			// list.add(R.drawable.finish);
+			// list.add(R.drawable.finish);
+			// list.add(R.drawable.finish);
+			// list.add(R.drawable.finish);
+			// list.add(R.drawable.finish);
 
 		}
 
@@ -440,148 +430,145 @@ public class CommonTools  {
 			list.add(R.drawable.finish);
 			list.add(R.drawable.finish);
 
-
 		}
 
 		else if (checkHol == 1) {
+			
+			
+			File f = new File(holPath);
+			mp.initMediaPlayLead(f, sav, my_shinning, my_shinning_set,
+					my_shinning_nomore);
 
-			
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.tips);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			list.add(R.drawable.lin_00000);
-			
-			list.add(R.drawable.lin_00001);
-			list.add(R.drawable.lin_00001);
-			list.add(R.drawable.lin_00001);
-			list.add(R.drawable.lin_00001);
-			list.add(R.drawable.lin_00001);
-			list.add(R.drawable.lin_00001);
-			list.add(R.drawable.lin_00001);
-			list.add(R.drawable.lin_00001);
-			list.add(R.drawable.lin_00001);
-			list.add(R.drawable.lin_00001);
-			list.add(R.drawable.lin_00002);
-			list.add(R.drawable.lin_00003);
-			list.add(R.drawable.lin_00004);
-			list.add(R.drawable.lin_00005);
-			list.add(R.drawable.lin_00006);
-			
-			list.add(R.drawable.lin_00010);
-			list.add(R.drawable.lin_00011);
-			list.add(R.drawable.lin_00012);
-			list.add(R.drawable.lin_00013);
-			list.add(R.drawable.lin_00014);
-			list.add(R.drawable.lin_00015);
-			list.add(R.drawable.lin_00016);
-			list.add(R.drawable.lin_00017);
-			list.add(R.drawable.lin_00018);
-			list.add(R.drawable.lin_00019);
-			list.add(R.drawable.lin_00020);
-			list.add(R.drawable.lin_00021);
-			list.add(R.drawable.lin_00022);
-			list.add(R.drawable.lin_00023);
-			list.add(R.drawable.lin_00024);
-			list.add(R.drawable.lin_00025);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00026);
-			list.add(R.drawable.lin_00037);
-			list.add(R.drawable.lin_00038);
-			list.add(R.drawable.lin_00039);
-			list.add(R.drawable.lin_00040);
-			list.add(R.drawable.lin_00041);
-			list.add(R.drawable.lin_00042);
-			list.add(R.drawable.lin_00043);
-			list.add(R.drawable.lin_00044);
-			list.add(R.drawable.lin_00044);
-			list.add(R.drawable.lin_00044);
-			list.add(R.drawable.lin_00044);
-			list.add(R.drawable.lin_00044);
-			list.add(R.drawable.lin_00044);
-			list.add(R.drawable.lin_00044);
-			list.add(R.drawable.lin_00044);
-			list.add(R.drawable.lin_00044);
-			list.add(R.drawable.lin_00044);
-			list.add(R.drawable.finish);
-			list.add(R.drawable.finish);
-			list.add(R.drawable.finish);
-			list.add(R.drawable.finish);
-			list.add(R.drawable.finish);
-
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.tips);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//			list.add(R.drawable.lin_00000);
+//
+//			list.add(R.drawable.lin_00001);
+//			list.add(R.drawable.lin_00001);
+//			list.add(R.drawable.lin_00001);
+//			list.add(R.drawable.lin_00001);
+//			list.add(R.drawable.lin_00001);
+//			list.add(R.drawable.lin_00001);
+//			list.add(R.drawable.lin_00001);
+//			list.add(R.drawable.lin_00001);
+//			list.add(R.drawable.lin_00001);
+//			list.add(R.drawable.lin_00001);
+//			list.add(R.drawable.lin_00002);
+//			list.add(R.drawable.lin_00003);
+//			list.add(R.drawable.lin_00004);
+//			list.add(R.drawable.lin_00005);
+//			list.add(R.drawable.lin_00006);
+//
+//			list.add(R.drawable.lin_00010);
+//			list.add(R.drawable.lin_00011);
+//			list.add(R.drawable.lin_00012);
+//			list.add(R.drawable.lin_00013);
+//			list.add(R.drawable.lin_00014);
+//			list.add(R.drawable.lin_00015);
+//			list.add(R.drawable.lin_00016);
+//			list.add(R.drawable.lin_00017);
+//			list.add(R.drawable.lin_00018);
+//			list.add(R.drawable.lin_00019);
+//			list.add(R.drawable.lin_00020);
+//			list.add(R.drawable.lin_00021);
+//			list.add(R.drawable.lin_00022);
+//			list.add(R.drawable.lin_00023);
+//			list.add(R.drawable.lin_00024);
+//			list.add(R.drawable.lin_00025);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00026);
+//			list.add(R.drawable.lin_00037);
+//			list.add(R.drawable.lin_00038);
+//			list.add(R.drawable.lin_00039);
+//			list.add(R.drawable.lin_00040);
+//			list.add(R.drawable.lin_00041);
+//			list.add(R.drawable.lin_00042);
+//			list.add(R.drawable.lin_00043);
+//			list.add(R.drawable.lin_00044);
+//			list.add(R.drawable.lin_00044);
+//			list.add(R.drawable.lin_00044);
+//			list.add(R.drawable.lin_00044);
+//			list.add(R.drawable.lin_00044);
+//			list.add(R.drawable.lin_00044);
+//			list.add(R.drawable.lin_00044);
+//			list.add(R.drawable.lin_00044);
+//			list.add(R.drawable.lin_00044);
+//			list.add(R.drawable.lin_00044);
+//			list.add(R.drawable.finish);
+//			list.add(R.drawable.finish);
+//			list.add(R.drawable.finish);
+//			list.add(R.drawable.finish);
+//			list.add(R.drawable.finish);s
 
 		}
-		sav.setData(list);
-		dlgView.startLayoutAnimation();
-		
-		
+		// sav.setData(list);
+		// dlgView.startLayoutAnimation();
 
-        
-
-		
 		final Dialog dialog = new Dialog(context,
 				R.style.activity_theme_transparent);
 
@@ -596,25 +583,22 @@ public class CommonTools  {
 			public void onClick(View v) {
 				// TODO Auto-generated
 				// method
-				
-				
+
 				// stub
-				
-				if(where == 1){
+
+				if (where == 1) {
 					dialog.dismiss();
 					Intent intent = new Intent();
 					intent.putExtra("firstJion", 0);
 					intent.setClass(context, TabHostActivity.class);
-	
+
 					context.startActivity(intent);
-				
+
 					((Activity) context).finish();
-					
-				}
-				else{
+
+				} else {
 					dialog.dismiss();
-					
-					
+
 				}
 
 			}
@@ -624,6 +608,8 @@ public class CommonTools  {
 
 			@Override
 			public void onClick(View v) {
+
+				MtaTools.MtaAutoSet(context);
 
 				if (checkMode == 1) {
 
@@ -660,7 +646,7 @@ public class CommonTools  {
 							Intent intent = new Intent();
 							intent.setComponent(component);
 							context.startActivity(intent);
-							//dialog.dismiss();
+							// dialog.dismiss();
 						}
 
 						catch (Exception ex) {
@@ -724,19 +710,18 @@ public class CommonTools  {
 				editor.putInt("isNoMore", 1);
 				editor.commit();
 
-				if(where==1){
+				if (where == 1) {
 					dialog.dismiss();
 					dialog.dismiss();
 					Intent intent = new Intent();
 					intent.putExtra("firstJion", 0);
 					intent.setClass(context, TabHostActivity.class);
-	
+
 					context.startActivity(intent);
-				
+
 					((Activity) context).finish();
-				}
-				else{
-					
+				} else {
+
 					dialog.dismiss();
 				}
 
@@ -781,37 +766,31 @@ public class CommonTools  {
 		}
 	}
 
-//	// 状态栏颜色
-//	public static void titleColor(Context ctx, String value) {
-//
-//		// 创建状态栏的管理实例
-//		SystemBarTintManager tintManager = new SystemBarTintManager(
-//				(Activity) ctx);
-//
-//		// 激活导航栏设置
-//		tintManager.setStatusBarTintEnabled(true);
-//		tintManager.setNavigationBarTintEnabled(false);
-//
-//		tintManager.setTintColor(Color.parseColor("#fe5453"));
-//
-//	}
-	
-	class mHander extends Handler {
-	public void handleMessage(Message msg) {
-		super.handleMessage(msg);
+	// // 状态栏颜色
+	// public static void titleColor(Context ctx, String value) {
+	//
+	// // 创建状态栏的管理实例
+	// SystemBarTintManager tintManager = new SystemBarTintManager(
+	// (Activity) ctx);
+	//
+	// // 激活导航栏设置
+	// tintManager.setStatusBarTintEnabled(true);
+	// tintManager.setNavigationBarTintEnabled(false);
+	//
+	// tintManager.setTintColor(Color.parseColor("#fe5453"));
+	//
+	// }
 
-		my_shinning_nomore.setVisibility(View.VISIBLE);
-		my_shinning.setVisibility(View.VISIBLE);
-		my_shinning_set.setVisibility(View.VISIBLE);
-	
+	class mHander extends Handler {
+		public void handleMessage(Message msg) {
+			super.handleMessage(msg);
+
+			my_shinning_nomore.setVisibility(View.VISIBLE);
+			my_shinning.setVisibility(View.VISIBLE);
+			my_shinning_set.setVisibility(View.VISIBLE);
+
+		}
 
 	}
-
-}
-	
-
-	
-	
-	
 
 }

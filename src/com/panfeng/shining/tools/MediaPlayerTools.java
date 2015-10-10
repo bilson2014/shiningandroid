@@ -6,12 +6,18 @@ import java.io.IOException;
 import com.panfeng.shining.TyuApp;
 import com.panfeng.shining.Impl.voiceImpl;
 import com.panfeng.shining.interfaces.volumnInterface;
+import com.panfeng.shinning.R;
 
+import android.content.Context;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
+import android.media.MediaPlayer.OnCompletionListener;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MediaPlayerTools {
@@ -36,6 +42,82 @@ public class MediaPlayerTools {
 		}
 
 	}
+	
+	public void initMediaPlayLead(File file,final SurfaceView surfaceView,final ImageView close,final ImageView set,final ImageView never){
+
+
+		surface = surfaceView;
+		
+		try {
+			
+				// 设置播放的视频源
+
+			mediaPlayer = new MediaPlayer();
+			surface.getHolder().addCallback(callback);
+			mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC);
+			mediaPlayer.setDataSource(file.getAbsolutePath());
+			mediaPlayer.prepareAsync();
+				mediaPlayer
+						.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+
+							@Override
+							public void onPrepared(MediaPlayer mp) {
+
+								// 装载完成
+								// 设置显示视频的SurfaceHolder
+								initMedia = true;
+								initView = true;
+								if (initView) {
+
+									TyuApp.hasinitMediapalyer = true;
+									mediaPlayer.setDisplay(surfaceView
+											.getHolder());
+									mediaPlayer.start();
+									
+								}
+
+							}
+						});
+				mediaPlayer
+						.setOnErrorListener(new MediaPlayer.OnErrorListener() {
+
+							@Override
+							public boolean onError(MediaPlayer mp, int what,
+									int extra) {
+								// 发生错误
+
+								if (mediaPlayer != null)
+									mediaPlayer.release();
+								mediaPlayer = null;
+								initMedia = false;
+								return false;
+							}
+						});
+				mediaPlayer.setOnCompletionListener(new OnCompletionListener() {
+
+	                @Override
+	                public void onCompletion(MediaPlayer mp) {
+	                   Log.d("tag", "播放完毕");
+	                   close.setVisibility(View.VISIBLE);
+	                   set.setVisibility(View.VISIBLE);
+	                   never.setVisibility(View.VISIBLE);
+	               	   mediaPlayer.start();
+	                   mediaPlayer.setLooping(true);
+
+	                }
+	            });
+				
+				
+			
+		} catch (Exception e) {
+
+			// FVPhoneStateReceiver.resumeVoice();
+			vi.resumeVoice();
+
+		}
+	}
+	
+	
 
 	public void initMediaPlay(File file, final SurfaceView surfaceView) {
 

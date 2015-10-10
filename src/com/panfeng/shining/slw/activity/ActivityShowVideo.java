@@ -60,6 +60,7 @@ public class ActivityShowVideo extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); 
 		netUtisl=new NetUtisl();
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		int flag = WindowManager.LayoutParams.FLAG_FULLSCREEN;
