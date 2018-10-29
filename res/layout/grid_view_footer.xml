@@ -8,9 +8,9 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:layout_marginBottom="10dp"
-        android:background="@color/cube_mints_main_color"
+        android:background="#007edf"
         android:gravity="center"
         android:text="ss"
-        android:textColor="@color/cube_mints_white"
+        android:textColor="#ffffff"
         android:textSize="14dp" />
 </FrameLayout>

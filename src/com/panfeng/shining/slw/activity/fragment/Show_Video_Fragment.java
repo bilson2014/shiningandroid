@@ -857,11 +857,11 @@ public class Show_Video_Fragment extends Fragment implements OnClickListener {
 			public void onClick(View v) {
 
 				if (NetTools.checkNetwork(context) && isCheck) {
-					ShareTools.performShare(share_ids[2], context);
+					/*ShareTools.performShare(share_ids[2], context);
 					Properties prop = new Properties();
 					prop.setProperty("type", "朋友圈");
 					prop.setProperty("share_id", videoID + "");
-					StatService.trackCustomKVEvent(context, "share", prop);
+					StatService.trackCustomKVEvent(context, "share", prop);友盟*/
 
 				} else {
 					Toast.makeText(context, "分享失败请稍后再试", Toast.LENGTH_SHORT)
@@ -876,11 +876,11 @@ public class Show_Video_Fragment extends Fragment implements OnClickListener {
 			public void onClick(View v) {
 
 				if (NetTools.checkNetwork(context) && isCheck) {
-					ShareTools.performShare(share_ids[1], context);
+					/*ShareTools.performShare(share_ids[1], context);
 					String type = "微信";
 					MtaTools.MtaShare(context, type, videoID + "");
 					showto.dismiss();
-
+友盟*/
 				} else {
 					Toast.makeText(context, "分享失败请稍后再试", Toast.LENGTH_SHORT)
 							.show();
@@ -894,9 +894,9 @@ public class Show_Video_Fragment extends Fragment implements OnClickListener {
 			public void onClick(View v) {
 
 				if (NetTools.checkNetwork(context) && isCheck) {
-					ShareTools.performShare(share_ids[0], context);
+					/*ShareTools.performShare(share_ids[0], context);
 					String type = "QQ";
-					MtaTools.MtaShare(context, type, videoID + "");
+					MtaTools.MtaShare(context, type, videoID + "");友盟*/
 
 				} else {
 					Toast.makeText(context, "分享失败请稍后再试", Toast.LENGTH_SHORT)
@@ -911,10 +911,10 @@ public class Show_Video_Fragment extends Fragment implements OnClickListener {
 			public void onClick(View v) {
 
 				if (NetTools.checkNetwork(context) && isCheck) {
-					ShareTools.performShare(share_ids[3], context);
+					/*ShareTools.performShare(share_ids[3], context);
 					String type = "微博";
 					MtaTools.MtaShare(context, type, videoID + "");
-					showto.dismiss();
+					showto.dismiss();友盟*/
 
 				} else {
 					Toast.makeText(context, "分享失败请稍后再试", Toast.LENGTH_SHORT)
@@ -1020,7 +1020,7 @@ public class Show_Video_Fragment extends Fragment implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 
-				ShareTools.performShare(share_ids[1], context);
+			//友盟	ShareTools.performShare(share_ids[1], context);
 
 			}
 		});
@@ -1030,7 +1030,7 @@ public class Show_Video_Fragment extends Fragment implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 
-				ShareTools.performShare(share_ids[2], context);
+			//友盟	ShareTools.performShare(share_ids[2], context);
 
 			}
 		});
@@ -1040,7 +1040,7 @@ public class Show_Video_Fragment extends Fragment implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 
-				ShareTools.performShare(share_ids[0], context);
+			//友盟	ShareTools.performShare(share_ids[0], context);
 
 			}
 		});
@@ -1050,7 +1050,7 @@ public class Show_Video_Fragment extends Fragment implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 
-				ShareTools.performShare(share_ids[3], context);
+			//友盟	ShareTools.performShare(share_ids[3], context);
 
 			}
 		});

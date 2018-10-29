@@ -47,8 +47,8 @@ import com.panfeng.shining.tools.UserControl;
 import com.panfeng.shining.widgets.HorizontalListView;
 import com.panfeng.shinning.R;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.controller.UMServiceFactory;
-import com.umeng.socialize.controller.UMSocialService;
+/*import com.umeng.socialize.controller.UMServiceFactory;
+import com.umeng.socialize.controller.UMSocialService;友盟*/
 
 public class ShowMediaActivity extends Activity implements OnClickListener {
 	private HorizontalListView keyList;
@@ -62,8 +62,8 @@ public class ShowMediaActivity extends Activity implements OnClickListener {
 	// 视频list数据
 
 	FileCopy fc = new FileCopy();
-	private UMSocialService mController = UMServiceFactory
-			.getUMSocialService("com.umeng.share");
+/*友盟	private UMSocialService mController = UMServiceFactory
+			.getUMSocialService("com.umeng.share");*/
 	String share_url = "";
 
 	String share_content = "";
@@ -395,7 +395,7 @@ public class ShowMediaActivity extends Activity implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 
-				ShareTools.performShare(share_ids[2], ctx);
+			//友盟	ShareTools.performShare(share_ids[2], ctx);
 
 			}
 		});
@@ -404,7 +404,7 @@ public class ShowMediaActivity extends Activity implements OnClickListener {
 
 			@Override
 			public void onClick(View v) {
-				ShareTools.performShare(share_ids[1], ctx);
+		//友盟		ShareTools.performShare(share_ids[1], ctx);
 			}
 		});
 
@@ -412,7 +412,7 @@ public class ShowMediaActivity extends Activity implements OnClickListener {
 
 			@Override
 			public void onClick(View v) {
-				ShareTools.performShare(share_ids[0], ctx);
+			//友盟	ShareTools.performShare(share_ids[0], ctx);
 			}
 		});
 
@@ -420,7 +420,7 @@ public class ShowMediaActivity extends Activity implements OnClickListener {
 
 			@Override
 			public void onClick(View v) {
-				ShareTools.performShare(share_ids[3], ctx);
+			//友盟	ShareTools.performShare(share_ids[3], ctx);
 			}
 		});
 

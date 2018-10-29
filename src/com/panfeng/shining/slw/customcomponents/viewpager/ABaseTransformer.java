@@ -20,6 +20,7 @@ package com.panfeng.shining.slw.customcomponents.viewpager;
 import android.support.v4.view.ViewPager.PageTransformer;
 import android.view.View;
 
+
 public abstract class ABaseTransformer implements PageTransformer {
 
 	/**

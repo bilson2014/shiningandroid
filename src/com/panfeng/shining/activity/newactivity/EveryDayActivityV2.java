@@ -8,6 +8,7 @@ import java.util.Map;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -35,7 +36,7 @@ public class EveryDayActivityV2 extends MintsBaseActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.new_everyday);
+		setContentView(R.layout.new_everyday);		
 		initTitleBar();
 		this.pushFragmentToBackStack(meirixianFragement.class, null);
 
@@ -49,13 +50,12 @@ public class EveryDayActivityV2 extends MintsBaseActivity {
 		bartxt.setText("每日鲜");
 		ImageView barbot = (ImageView) title.findViewById(R.id.bar_set);
 		barbot.setVisibility(View.VISIBLE);
-
+		Log.i("luslw", "joinBarText");
 		barbot.setOnClickListener(new OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(EveryDayActivityV2.this,
-						SearchActivity.class);
+				Intent intent = new Intent(EveryDayActivityV2.this,SearchActivity.class);
 				startActivity(intent);
 
 			}

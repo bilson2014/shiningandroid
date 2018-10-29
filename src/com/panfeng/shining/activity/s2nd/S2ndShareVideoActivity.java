@@ -18,24 +18,24 @@ import com.panfeng.shining.data.TyuShinningData.VideoItemData;
 import com.panfeng.shinning.R;
 import com.tencent.stat.StatService;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.bean.SocializeEntity;
+//import com.umeng.socialize.bean.SocializeEntity;
 import com.umeng.socialize.bean.StatusCode;
-import com.umeng.socialize.controller.UMServiceFactory;
-import com.umeng.socialize.controller.UMSocialService;
-import com.umeng.socialize.controller.listener.SocializeListeners.SnsPostListener;
-import com.umeng.socialize.media.QQShareContent;
-import com.umeng.socialize.media.QZoneShareContent;
-import com.umeng.socialize.sso.QZoneSsoHandler;
-import com.umeng.socialize.sso.SinaSsoHandler;
-import com.umeng.socialize.sso.TencentWBSsoHandler;
-import com.umeng.socialize.sso.UMQQSsoHandler;
-import com.umeng.socialize.weixin.controller.UMWXHandler;
-import com.umeng.socialize.weixin.media.CircleShareContent;
-import com.umeng.socialize.weixin.media.WeiXinShareContent;
+//import com.umeng.socialize.controller.UMServiceFactory;
+//import com.umeng.socialize.controller.UMSocialService;
+//import com.umeng.socialize.controller.listener.SocializeListeners.SnsPostListener;
+/*import com.umeng.socialize.media.QQShareContent;
+import com.umeng.socialize.media.QZoneShareContent;*/
+//import com.umeng.socialize.sso.QZoneSsoHandler;
+//import com.umeng.socialize.sso.SinaSsoHandler;
+//import com.umeng.socialize.sso.TencentWBSsoHandler;
+//import com.umeng.socialize.sso.UMQQSsoHandler;
+//import com.umeng.socialize.weixin.controller.UMWXHandler;
+//import com.umeng.socialize.weixin.media.CircleShareContent;
+//友盟import com.umeng.socialize.weixin.media.WeiXinShareContent;
 
 public class S2ndShareVideoActivity extends Activity {
-	private UMSocialService mController = UMServiceFactory
-			.getUMSocialService("com.umeng.share");
+	/*private UMSocialService mController = UMServiceFactory
+			.getUMSocialService("com.umeng.share");*/
 	static VideoItemData dataCache = null;
 	String share_url = TyuDefine.URL + "share.jsp";
 	String share_content = "";
@@ -137,7 +137,7 @@ public class S2ndShareVideoActivity extends Activity {
 		String content = String.format(template, name, share_url);
 		share_content = content;
 		//
-		mController.setShareContent(content);
+		/*mController.setShareContent(content);
 	
 		// 微信
 	
@@ -170,18 +170,18 @@ public class S2ndShareVideoActivity extends Activity {
 		qqShareContent.setShareContent(content);
 		qqShareContent.setTargetUrl(share_url);
 	//	qqShareContent.setShareMedia(new UMImage(this, dataCache.image_url));
-		mController.setShareMedia(qqShareContent);
+		mController.setShareMedia(qqShareContent);友盟*/
 	}
 
 	/**
 	 * 配置分享平台参数</br>
 	 */
 	private void configPlatforms() {
-		mController.getConfig().closeToast();
+	/*	mController.getConfig().closeToast();
 		// 添加新浪SSO授权
 		mController.getConfig().setSsoHandler(new SinaSsoHandler());
 		// 添加腾讯微博SSO授权
-		mController.getConfig().setSsoHandler(new TencentWBSsoHandler());
+		mController.getConfig().setSsoHandler(new TencentWBSsoHandler());友盟*/
 		// // 添加人人网SSO授权
 		// RenrenSsoHandler renrenSsoHandler = new
 		// RenrenSsoHandler(getActivity(),
@@ -206,14 +206,14 @@ public class S2ndShareVideoActivity extends Activity {
 		String appId = "wxaf12b567e6be5abf";
 		String appSecret = "a60cd6661f912d1aee285b0043332875";
 		// 添加微信平台
-		UMWXHandler wxHandler = new UMWXHandler(getActivity(), appId, appSecret);
+	/*	UMWXHandler wxHandler = new UMWXHandler(getActivity(), appId, appSecret);
 		wxHandler.addToSocialSDK();
 
 		// 支持微信朋友圈
 		UMWXHandler wxCircleHandler = new UMWXHandler(getActivity(), appId,
 				appSecret);
 		wxCircleHandler.setToCircle(true);
-		wxCircleHandler.addToSocialSDK();
+		wxCircleHandler.addToSocialSDK();友盟*/
 	}
 
 	
@@ -228,7 +228,7 @@ public class S2ndShareVideoActivity extends Activity {
 		String appId = "100424468";
 		String appKey = "c7394704798a158208a74ab60104f0ba";
 		// 添加QQ支持, 并且设置QQ分享内容的target url
-		UMQQSsoHandler qqSsoHandler = new UMQQSsoHandler(getActivity(), appId,
+	/*	UMQQSsoHandler qqSsoHandler = new UMQQSsoHandler(getActivity(), appId,
 				appKey);
 
 		qqSsoHandler.addToSocialSDK();
@@ -236,7 +236,7 @@ public class S2ndShareVideoActivity extends Activity {
 		// 添加QZone平台
 		QZoneSsoHandler qZoneSsoHandler = new QZoneSsoHandler(getActivity(),
 				appId, appKey);
-		qZoneSsoHandler.addToSocialSDK();
+		qZoneSsoHandler.addToSocialSDK();友盟*/
 	}
 
 	private Activity getActivity() {
@@ -263,7 +263,7 @@ public class S2ndShareVideoActivity extends Activity {
 	
 
 	private void performShare(SHARE_MEDIA platform) {
-		mController.postShare(this, platform, new SnsPostListener() {
+	/*	mController.postShare(this, platform, new SnsPostListener() {
 
 			@Override
 			public void onStart() {
@@ -290,6 +290,6 @@ public class S2ndShareVideoActivity extends Activity {
 				TyuCommon.showToast(getActivity(), showText);
 				finish();
 			}
-		});
+		});友盟*/
 	}
 }

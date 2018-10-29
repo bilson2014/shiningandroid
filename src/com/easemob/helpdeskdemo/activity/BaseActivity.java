@@ -76,9 +76,9 @@ public class BaseActivity extends FragmentActivity {
         //设置状态栏提示
         mBuilder.setTicker(message.getFrom()+": " + ticker);
         
-        Notification notification = mBuilder.build();
+       /* 友盟Notification notification = mBuilder.build();
         notificationManager.notify(notifiId, notification);
-        notificationManager.cancel(notifiId);
+        notificationManager.cancel(notifiId);*/
     }
 
     /**

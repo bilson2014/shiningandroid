@@ -49,7 +49,6 @@ public class RankActivity extends Activity {
 
 	mHander m = new mHander();
 
-	
 	Context ctx = RankActivity.this;
 	private RankListAdapter rankAdapter;
 	private ListView listview;

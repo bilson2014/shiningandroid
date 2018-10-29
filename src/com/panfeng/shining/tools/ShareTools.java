@@ -8,25 +8,25 @@ import android.util.Log;
 
 import com.panfeng.shinning.R;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.bean.SocializeEntity;
+/*import com.umeng.socialize.bean.SocializeEntity;*/
 import com.umeng.socialize.bean.StatusCode;
-import com.umeng.socialize.controller.UMServiceFactory;
+/*import com.umeng.socialize.controller.UMServiceFactory;
 import com.umeng.socialize.controller.UMSocialService;
-import com.umeng.socialize.controller.listener.SocializeListeners.SnsPostListener;
-import com.umeng.socialize.media.QQShareContent;
-import com.umeng.socialize.media.QZoneShareContent;
+import com.umeng.socialize.controller.listener.SocializeListeners.SnsPostListener;*/
+/*import com.umeng.socialize.media.QQShareContent;
+import com.umeng.socialize.media.QZoneShareContent;*/
 import com.umeng.socialize.media.UMImage;
-import com.umeng.socialize.sso.QZoneSsoHandler;
+/*import com.umeng.socialize.sso.QZoneSsoHandler;
 import com.umeng.socialize.sso.SinaSsoHandler;
 import com.umeng.socialize.sso.UMQQSsoHandler;
 import com.umeng.socialize.weixin.controller.UMWXHandler;
 import com.umeng.socialize.weixin.media.CircleShareContent;
-import com.umeng.socialize.weixin.media.WeiXinShareContent;
+import com.umeng.socialize.weixin.media.WeiXinShareContent; 友盟*/
 
 public class ShareTools {
 	
-	private static UMSocialService mController = UMServiceFactory
-			.getUMSocialService("com.umeng.share");
+	/*private static UMSocialService mController = UMServiceFactory
+			.getUMSocialService("com.umeng.share");*/
 
 	/**
 	 * @param 分享
@@ -46,14 +46,14 @@ public class ShareTools {
 		String content = String.format(template, name, share_url);
 		share_content = content;
 		//
-		mController.setShareContent(content);
+		//mController.setShareContent(content);
 
 		// 微信
 		Log.i("slw", "content=" + share_content);
 		Log.i("slw", "share=" + share_url);
 		UMImage umImage = new UMImage(ctx, R.drawable.app_share);
 
-		WeiXinShareContent weixinContent = new WeiXinShareContent();
+		/*WeiXinShareContent weixinContent = new WeiXinShareContent();
 		weixinContent.setShareContent(content);
 		weixinContent.setTitle("闪铃");
 		weixinContent.setTargetUrl(share_url);
@@ -84,16 +84,16 @@ public class ShareTools {
 		
 		// 设置分享图片, 参数2为图片的url地址
 		qqShareContent.setShareMedia(umImage);
-		mController.setShareMedia(qqShareContent);
+		mController.setShareMedia(qqShareContent);*/
 	}
 
 	/**
 	 * 配置分享平台参数</br>
 	 */
 	public static void configPlatforms(Context ctx) {
-		mController.getConfig().closeToast();
+	/*	mController.getConfig().closeToast();
 		// 添加新浪SSO授权
-		mController.getConfig().setSsoHandler(new SinaSsoHandler());
+		mController.getConfig().setSsoHandler(new SinaSsoHandler());*/
 	
 		// 添加腾讯微博SSO授权
 		//mController.getConfig().setSsoHandler(new TencentWBSsoHandler());
@@ -121,14 +121,14 @@ public class ShareTools {
 		String appId = "wxaf12b567e6be5abf";
 		String appSecret = "a60cd6661f912d1aee285b0043332875";
 		// 添加微信平台
-		UMWXHandler wxHandler = new UMWXHandler(ctx, appId, appSecret);
+	/*	UMWXHandler wxHandler = new UMWXHandler(ctx, appId, appSecret);
 		wxHandler.addToSocialSDK();
 
 		// 支持微信朋友圈
 		UMWXHandler wxCircleHandler = new UMWXHandler(ctx, appId,
-				appSecret);
-		wxCircleHandler.setToCircle(true);
-		wxCircleHandler.addToSocialSDK();
+				appSecret);*/
+	/*	wxCircleHandler.setToCircle(true);
+		wxCircleHandler.addToSocialSDK();*/
 	}
 
 	/**
@@ -142,19 +142,19 @@ public class ShareTools {
 		String appId = "1104334973";
 		String appKey = "c7394704798a158208a74ab60104f0ba";
 		// 添加QQ支持, 并且设置QQ分享内容的target url
-		UMQQSsoHandler qqSsoHandler = new UMQQSsoHandler((Activity) ctx, appId,appKey);
+	//	UMQQSsoHandler qqSsoHandler = new UMQQSsoHandler((Activity) ctx, appId,appKey);
 
-		qqSsoHandler.addToSocialSDK();
+	//	qqSsoHandler.addToSocialSDK();
 
 		// 添加QZone平台
-		QZoneSsoHandler qZoneSsoHandler = new QZoneSsoHandler((Activity) ctx,
-				appId, appKey);
-		qZoneSsoHandler.addToSocialSDK();
+	//	QZoneSsoHandler qZoneSsoHandler = new QZoneSsoHandler((Activity) ctx,
+	//			appId, appKey);
+	//	qZoneSsoHandler.addToSocialSDK();
 	}
 
 
 
-	public static void performShare(SHARE_MEDIA platform,final Context ctx) {
+	/*public static void performShare(SHARE_MEDIA platform,final Context ctx) {
 		mController.postShare(ctx, platform, new SnsPostListener() {
 
 			@Override
@@ -185,7 +185,7 @@ public class ShareTools {
 				//((Activity) ctx).finish();
 			}
 		});
-	}
+	}*/
 	
 
 	

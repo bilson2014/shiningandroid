@@ -12,6 +12,6 @@
         android:background="#ff6600"
         android:gravity="center"
         android:text="HEADER\nCLICK TO LOAD DATA"
-        android:textColor="@color/cube_mints_white"
+        android:textColor="#ffffff"
         android:textSize="14dp" />
 </FrameLayout>

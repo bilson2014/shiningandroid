@@ -16,8 +16,12 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
+import android.util.Log;
 import android.widget.ImageView;
+
 import com.panfeng.servicerestart.RestartUtil;
+import com.panfeng.shining.activity.newactivity.EveryDayActivityV2;
+import com.panfeng.shining.activity.newactivity.RankActivity;
 import com.panfeng.shining.activity.s2nd.TabHostActivity;
 import com.panfeng.shining.entity.UserInfoEntity;
 import com.panfeng.shining.tools.UserControl;
@@ -31,7 +35,6 @@ public class SplashActivity extends Activity {
 	UserInfoEntity ex;
 	Context context = this;
 	
-
 	final Handler mhandler = new Handler() {
 		@Override
 		public void handleMessage(Message msg) {
@@ -41,10 +44,11 @@ public class SplashActivity extends Activity {
 		
 
 				if (TyuPreferenceManager.isFirstOpen("guide")) {
+					Log.i("luslw", "sp");
 					startActivity(new Intent(SplashActivity.this,
 							GuideActivity.class));
 				} else if (ex != null && UserControl.isLogin()) {
-
+					Log.i("luslw", "ta1");
 					Intent intent = new Intent();
 					intent.putExtra("firstJion",1);
 					intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
@@ -52,13 +56,14 @@ public class SplashActivity extends Activity {
 					startActivity(intent);
 
 				} else {
-					
+					Log.i("luslw", "ta2");
 					Intent intent = new Intent();
 					intent.putExtra("firstJion",1);
 					intent.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-					intent.setClass(SplashActivity.this, TabHostActivity.class);
+				//	intent.setClass(SplashActivity.this, TabHostActivity.class);
+					intent.setClass(SplashActivity.this, EveryDayActivityV2.class);
 					startActivity(intent);
-
+					
 				}
 
 				// startActivity(new Intent(SplashActivity.this,
@@ -81,6 +86,8 @@ public class SplashActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.splash_layout);
 		ex = UserControl.getUserInfo();
+		
+		
 
 		makeFile();
 
@@ -113,6 +120,7 @@ public class SplashActivity extends Activity {
 			bitmap = BitmapFactory.decodeResource(getResources(),
 					R.drawable.splash_all);
 		img.setImageDrawable(new BitmapDrawable(bitmap));
+		
 		new Thread() {
 			@Override
 			public void run() {

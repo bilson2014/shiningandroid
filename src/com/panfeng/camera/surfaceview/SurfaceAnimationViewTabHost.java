@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.panfeng.shining.interfaces.callBack;
 import com.panfeng.shining.tools.CommonTools;
-import com.renn.rennsdk.RennExecutor.CallBack;
+//import com.renn.rennsdk.RennExecutor.CallBack;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

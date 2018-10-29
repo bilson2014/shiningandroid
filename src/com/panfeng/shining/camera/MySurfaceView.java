@@ -54,8 +54,6 @@ import com.panfeng.shining.tools.ShareTools;
 import com.panfeng.shining.tools.UserControl;
 import com.panfeng.shinning.R;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.controller.UMServiceFactory;
-import com.umeng.socialize.controller.UMSocialService;
 
 public class MySurfaceView extends Activity {
 	
@@ -77,9 +75,9 @@ public class MySurfaceView extends Activity {
 
 	private int urlId;
 	FileCopy fc = new FileCopy();
-	private UMSocialService mController = UMServiceFactory
+	/*private UMSocialService mController = UMServiceFactory
 			.getUMSocialService("com.umeng.share");
-
+友盟*/
 	String share_content = "";
 	String videoname;
 
@@ -357,7 +355,7 @@ public class MySurfaceView extends Activity {
 			public void onClick(View v) {
 
 				if (!errors) {
-					ShareTools.performShare(share_ids[3],ctx);
+				//友盟	ShareTools.performShare(share_ids[3],ctx);
 				} else {
 					errorup = "无法分享！网络不给力啊";
 					errorbot = "客官请稍后再试";
@@ -379,7 +377,7 @@ public class MySurfaceView extends Activity {
 			@Override
 			public void onClick(View v) {
 				if (!errors) {
-					ShareTools.performShare(share_ids[2],ctx);
+			//友盟		ShareTools.performShare(share_ids[2],ctx);
 				} else {
 					errorup = "无法分享！网络不给力啊";
 					errorbot = "客官请稍后再试";
@@ -401,7 +399,7 @@ public class MySurfaceView extends Activity {
 			@Override
 			public void onClick(View v) {
 				if (!errors) {
-					ShareTools.performShare(share_ids[1],ctx);
+				//友盟	ShareTools.performShare(share_ids[1],ctx);
 				} else {
 					errorup = "无法分享！网络不给力啊";
 					errorbot = "客官请稍后再试";
@@ -424,7 +422,7 @@ public class MySurfaceView extends Activity {
 			public void onClick(View v) {
 
 				if (!errors) {
-					ShareTools.performShare(share_ids[0],ctx);
+				//友盟	ShareTools.performShare(share_ids[0],ctx);
 				} else {
 					errorup = "无法分享！网络不给力啊";
 					errorbot = "客官请稍后再试";
@@ -1194,7 +1192,7 @@ public class MySurfaceView extends Activity {
 									SHARE_MEDIA.WEIXIN_CIRCLE,
 									SHARE_MEDIA.SINA, };
 
-							ShareTools.performShare(share_ids[shareId],ctx);
+					//友盟		ShareTools.performShare(share_ids[shareId],ctx);
 
 						}
 

@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
-	<classpathentry exported="true" kind="lib" path="libs/com.umeng.fb.5.2.0.jar"/>
-	<classpathentry exported="true" kind="lib" path="libs/mid-sdk-2.10.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/universal-image-loader-1.8.4-with-sources.jar"/>
 	<classpathentry exported="true" kind="lib" path="libs/xUtils-2.6.14.jar"/>
-	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/core"/>
-	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/ptr-lib"/>
-	<classpathentry kind="lib" path="libs/CCP_REST_SMS_SDK_JAVA_v2.6.3r.jar"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry exported="true" kind="lib" path="D:/adt-bundle-windows-x86_64-20140321/sdk/extras/android/support/support-annotations-23.0.1.jar"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/social_sdk_library_project"/>
+	<classpathentry combineaccessrules="false" exported="true" kind="src" path="/ptr-lib"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry kind="lib" path="D:/adt-bundle-windows-x86_64-20140321/sdk/extras/android/support/nv4/android-support-v4.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

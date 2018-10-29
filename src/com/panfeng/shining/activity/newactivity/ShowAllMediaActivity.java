@@ -78,8 +78,9 @@ import com.panfeng.shining.widgets.HorizontalListView;
 import com.panfeng.shinning.R;
 import com.tencent.stat.StatService;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.controller.UMServiceFactory;
-import com.umeng.socialize.controller.UMSocialService;
+
+//import com.umeng.socialize.controller.UMServiceFactory;
+//友盟import com.umeng.socialize.controller.UMSocialService;
 
 public class ShowAllMediaActivity extends Activity implements OnClickListener {
 	private HorizontalListView keyList;
@@ -117,8 +118,8 @@ public class ShowAllMediaActivity extends Activity implements OnClickListener {
 
 	// myhandler myh = new myhandler();
 
-	private UMSocialService mController = UMServiceFactory
-			.getUMSocialService("com.umeng.share");
+/*	private UMSocialService mController = UMServiceFactory
+			.getUMSocialService("com.umeng.share");友盟*/
 
 	List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>();
 	ArrayList<View> itemViewList = new ArrayList<View>();
@@ -705,11 +706,11 @@ public class ShowAllMediaActivity extends Activity implements OnClickListener {
 			public void onClick(View v) {
 
 				if (NetTools.checkNetwork(ctx) && isCheck) {
-					ShareTools.performShare(share_ids[2], ctx);
+				/*	ShareTools.performShare(share_ids[2], ctx);
 					Properties prop = new Properties();
 					prop.setProperty("type", "朋友圈");
 					prop.setProperty("share_id", videoEntityLu.getVideoID() + "");
-					StatService.trackCustomKVEvent(ctx, "share", prop);
+					StatService.trackCustomKVEvent(ctx, "share", prop);友盟*/
 
 				} else {
 					Toast.makeText(ctx, "分享失败请稍后再试", Toast.LENGTH_SHORT).show();
@@ -723,10 +724,10 @@ public class ShowAllMediaActivity extends Activity implements OnClickListener {
 			public void onClick(View v) {
 
 				if (NetTools.checkNetwork(ctx) && isCheck) {
-					ShareTools.performShare(share_ids[1], ctx);
+				/*	ShareTools.performShare(share_ids[1], ctx);
 					String type = "微信";
 					MtaTools.MtaShare(ctx, type, videoEntityLu.getVideoID() + "");
-					showto.dismiss();
+					showto.dismiss();友盟*/
 
 				} else {
 					Toast.makeText(ctx, "分享失败请稍后再试", Toast.LENGTH_SHORT).show();
@@ -740,9 +741,9 @@ public class ShowAllMediaActivity extends Activity implements OnClickListener {
 			public void onClick(View v) {
 
 				if (NetTools.checkNetwork(ctx) && isCheck) {
-					ShareTools.performShare(share_ids[0], ctx);
+					/*ShareTools.performShare(share_ids[0], ctx);
 					String type = "QQ";
-					MtaTools.MtaShare(ctx, type, videoEntityLu.getVideoID() + "");
+					MtaTools.MtaShare(ctx, type, videoEntityLu.getVideoID() + "");友盟*/
 
 				} else {
 					Toast.makeText(ctx, "分享失败请稍后再试", Toast.LENGTH_SHORT).show();
@@ -756,10 +757,10 @@ public class ShowAllMediaActivity extends Activity implements OnClickListener {
 			public void onClick(View v) {
 
 				if (NetTools.checkNetwork(ctx) && isCheck) {
-					ShareTools.performShare(share_ids[3], ctx);
+					/*ShareTools.performShare(share_ids[3], ctx);
 					String type = "微博";
 					MtaTools.MtaShare(ctx, type, videoEntityLu.getVideoID() + "");
-					showto.dismiss();
+					showto.dismiss();友盟*/
 
 				} else {
 					Toast.makeText(ctx, "分享失败请稍后再试", Toast.LENGTH_SHORT).show();
@@ -867,7 +868,7 @@ public class ShowAllMediaActivity extends Activity implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 
-				ShareTools.performShare(share_ids[1], ctx);
+			//友盟	ShareTools.performShare(share_ids[1], ctx);
 
 			}
 		});
@@ -877,7 +878,7 @@ public class ShowAllMediaActivity extends Activity implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 
-				ShareTools.performShare(share_ids[2], ctx);
+			//友盟	ShareTools.performShare(share_ids[2], ctx);
 
 			}
 		});
@@ -887,7 +888,7 @@ public class ShowAllMediaActivity extends Activity implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 
-				ShareTools.performShare(share_ids[0], ctx);
+			//友盟	ShareTools.performShare(share_ids[0], ctx);
 
 			}
 		});
@@ -897,7 +898,7 @@ public class ShowAllMediaActivity extends Activity implements OnClickListener {
 			@Override
 			public void onClick(View v) {
 
-				ShareTools.performShare(share_ids[3], ctx);
+			//友盟	ShareTools.performShare(share_ids[3], ctx);
 
 			}
 		});

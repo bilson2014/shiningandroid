@@ -44,21 +44,22 @@ import com.panfeng.shining.tools.UserControl;
 import com.panfeng.shinning.R;
 import com.tencent.stat.StatService;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.bean.SocializeEntity;
+/*import com.umeng.socialize.bean.SocializeEntity;
 import com.umeng.socialize.bean.StatusCode;
 import com.umeng.socialize.controller.UMServiceFactory;
 import com.umeng.socialize.controller.UMSocialService;
-import com.umeng.socialize.controller.listener.SocializeListeners.SnsPostListener;
-import com.umeng.socialize.media.QQShareContent;
-import com.umeng.socialize.media.QZoneShareContent;
+import com.umeng.socialize.controller.listener.SocializeListeners.SnsPostListener;*/
+/*import com.umeng.socialize.media.QQShareContent;
+import com.umeng.socialize.media.QZoneShareContent;*/
 import com.umeng.socialize.media.UMImage;
-import com.umeng.socialize.sso.QZoneSsoHandler;
+/*import com.umeng.socialize.sso.QZoneSsoHandler;
 import com.umeng.socialize.sso.SinaSsoHandler;
 import com.umeng.socialize.sso.TencentWBSsoHandler;
 import com.umeng.socialize.sso.UMQQSsoHandler;
 import com.umeng.socialize.weixin.controller.UMWXHandler;
 import com.umeng.socialize.weixin.media.CircleShareContent;
-import com.umeng.socialize.weixin.media.WeiXinShareContent;
+import com.umeng.socialize.weixin.media.WeiXinShareContent;*/
+//友盟
 
 public class SelfieSet extends Activity implements OnClickListener {
 
@@ -83,8 +84,8 @@ public class SelfieSet extends Activity implements OnClickListener {
 			+ "/com.panfeng.shinning" + "/video/";
 	String saveVideo = Environment.getExternalStorageDirectory()
 			.getAbsolutePath() + "/com.panfeng.shinning" + "/mySave/";
-	private UMSocialService mController = UMServiceFactory
-			.getUMSocialService("com.umeng.share");
+/*	private UMSocialService mController = UMServiceFactory
+			.getUMSocialService("com.umeng.share");友盟*/
 	private Context ctx = SelfieSet.this;
 	private SharedPreferences preference;
 	String share_url = "";
@@ -669,20 +670,20 @@ public class SelfieSet extends Activity implements OnClickListener {
 		String content = String.format(template, name, share_url);
 		share_content = content;
 		//
-		mController.setShareContent(content);
+	//友盟	mController.setShareContent(content);
 
 		// 微信
 		Log.i("slw", "content=" + share_content);
 		Log.i("slw", "share=" + share_url);
 
-		WeiXinShareContent weixinContent = new WeiXinShareContent();
-		weixinContent.setShareContent(content);
+		//友盟	WeiXinShareContent weixinContent = new WeiXinShareContent();
+	/*	weixinContent.setShareContent(content);
 		weixinContent.setTitle("闪铃");
 		weixinContent.setTargetUrl(share_url);
 		weixinContent.setShareMedia(new UMImage(this, ""));
-		mController.setShareMedia(weixinContent);
+		mController.setShareMedia(weixinContent);*/
 		// 设置朋友圈分享的内容
-		CircleShareContent circleMedia = new CircleShareContent();
+/*		CircleShareContent circleMedia = new CircleShareContent();
 		circleMedia.setShareContent(content);
 		circleMedia.setTitle("闪铃");
 		circleMedia.setTargetUrl(share_url);
@@ -704,18 +705,18 @@ public class SelfieSet extends Activity implements OnClickListener {
 		qqShareContent.setShareContent(content);
 		qqShareContent.setTargetUrl(share_url);
 		qqShareContent.setShareMedia(new UMImage(this, ""));
-		mController.setShareMedia(qqShareContent);
+		mController.setShareMedia(qqShareContent);*/
 	}
 
 	/**
 	 * 配置分享平台参数</br>
 	 */
 	private void configPlatforms() {
-		mController.getConfig().closeToast();
+		/*mController.getConfig().closeToast();
 		// 添加新浪SSO授权
 		mController.getConfig().setSsoHandler(new SinaSsoHandler());
 		// 添加腾讯微博SSO授权
-		mController.getConfig().setSsoHandler(new TencentWBSsoHandler());
+		mController.getConfig().setSsoHandler(new TencentWBSsoHandler());*/
 		// // 添加人人网SSO授权
 		// RenrenSsoHandler renrenSsoHandler = new
 		// RenrenSsoHandler(getActivity(),
@@ -740,14 +741,14 @@ public class SelfieSet extends Activity implements OnClickListener {
 		String appId = "wxaf12b567e6be5abf";
 		String appSecret = "a60cd6661f912d1aee285b0043332875";
 		// 添加微信平台
-		UMWXHandler wxHandler = new UMWXHandler(getActivity(), appId, appSecret);
+	/*	UMWXHandler wxHandler = new UMWXHandler(getActivity(), appId, appSecret);
 		wxHandler.addToSocialSDK();
 
 		// 支持微信朋友圈
 		UMWXHandler wxCircleHandler = new UMWXHandler(getActivity(), appId,
 				appSecret);
 		wxCircleHandler.setToCircle(true);
-		wxCircleHandler.addToSocialSDK();
+		wxCircleHandler.addToSocialSDK();*/
 	}
 
 	/**
@@ -761,7 +762,7 @@ public class SelfieSet extends Activity implements OnClickListener {
 		String appId = "100424468";
 		String appKey = "c7394704798a158208a74ab60104f0ba";
 		// 添加QQ支持, 并且设置QQ分享内容的target url
-		UMQQSsoHandler qqSsoHandler = new UMQQSsoHandler(getActivity(), appId,
+		/*UMQQSsoHandler qqSsoHandler = new UMQQSsoHandler(getActivity(), appId,
 				appKey);
 
 		qqSsoHandler.addToSocialSDK();
@@ -769,7 +770,7 @@ public class SelfieSet extends Activity implements OnClickListener {
 		// 添加QZone平台
 		QZoneSsoHandler qZoneSsoHandler = new QZoneSsoHandler(getActivity(),
 				appId, appKey);
-		qZoneSsoHandler.addToSocialSDK();
+		qZoneSsoHandler.addToSocialSDK();*/
 	}
 
 	private Activity getActivity() {
@@ -778,7 +779,7 @@ public class SelfieSet extends Activity implements OnClickListener {
 	}
 
 	private void performShare(SHARE_MEDIA platform) {
-		mController.postShare(this, platform, new SnsPostListener() {
+		/*mController.postShare(this, platform, new SnsPostListener() {
 
 			@Override
 			public void onStart() {
@@ -804,7 +805,7 @@ public class SelfieSet extends Activity implements OnClickListener {
 				TyuCommon.showToast(getActivity(), showText);
 				finish();
 			}
-		});
+		});*/
 	}
 
 	@Override

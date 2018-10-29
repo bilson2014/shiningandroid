@@ -81,7 +81,7 @@ public class meirixianFragement extends TitleBaseFragment {
 	@Override
 	protected View createView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		context = getActivity();
+		context = getActivity();	
 		netUtisl = new NetUtisl();
 		mImageLoader = ImageLoaderFactory.create(getContext());
 		initlunbo();

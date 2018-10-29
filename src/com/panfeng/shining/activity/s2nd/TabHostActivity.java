@@ -320,7 +320,7 @@ public class TabHostActivity extends Activity implements OnClickListener {
 						}
 					}
 				});
-
+		
 	}
 
 	public void copyResToSdcard() {// name为sd卡下制定的路径
@@ -395,12 +395,14 @@ public class TabHostActivity extends Activity implements OnClickListener {
 	};
 
 	private void InitViewPager() {
-
+        
+		
+		Log.i("luslw", "initStart");
 		Intent intent = null;
 		listViews = new ArrayList<View>();
 		mpAdapter = new MyPagerAdapter(listViews);
 
-		intent = new Intent(TabHostActivity.this, RankActivity.class);
+	/*	intent = new Intent(TabHostActivity.this, RankActivity.class);
 		listViews.add(getView("A", intent));
 		intent = new Intent(TabHostActivity.this, EveryDayActivityV2.class);
 		listViews.add(getView("B", intent));
@@ -414,7 +416,7 @@ public class TabHostActivity extends Activity implements OnClickListener {
 		mPager.setOffscreenPageLimit(0);
 		mPager.setAdapter(mpAdapter);
 		mPager.setCurrentItem(index);
-		mPager.setOnPageChangeListener(new MyOnPageChangeListener());
+		mPager.setOnPageChangeListener(new MyOnPageChangeListener());卢*/
 
 	}
 
