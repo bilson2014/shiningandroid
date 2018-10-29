@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/project/!svn/ver/234/zmz_svn/src/tyu/common/receive
+END
+AlarmReceiver.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/project/!svn/ver/233/zmz_svn/src/tyu/common/receive/AlarmReceiver.java
+END
+AuctionClockReceiver.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/project/!svn/ver/234/zmz_svn/src/tyu/common/receive/AuctionClockReceiver.java
+END
+BootReceiver.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/project/!svn/ver/233/zmz_svn/src/tyu/common/receive/BootReceiver.java
+END
+ConnectionChangeReceiver.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/project/!svn/ver/233/zmz_svn/src/tyu/common/receive/ConnectionChangeReceiver.java
+END
